@@ -14,7 +14,7 @@
       <button type="button" class="c-close" aria-label="닫기">×</button>
       <p class="c-eyebrow">365일 24시간 접수</p>
       <h2 id="consult-title">원클릭 상담 신청</h2>
-      <p class="c-lead">신청은 언제든 받으며, 담당자가 오전 9시 – 오후 6시에 연락드립니다.</p>
+      <p class="c-lead">신청은 주말·공휴일에도 받으며, 담당자가 평일 오전 9시 – 오후 6시에 연락드립니다.</p>
       <label>이용 대상자 이름<input name="patient" autocomplete="off" maxlength="40" required></label>
       <label>보호자 이름<input name="guardian" autocomplete="name" maxlength="40" required></label>
       <label>연락처<input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" maxlength="20" required></label>
@@ -37,7 +37,7 @@
     </form>
     <div class="c-done" hidden>
       <h2>신청이 접수되었습니다.</h2>
-      <p>담당자가 상담 시간(오전 9시 – 오후 6시)에 남겨 주신 연락처로 연락드리겠습니다.</p>
+      <p>담당자가 상담 시간(평일 오전 9시 – 오후 6시)에 남겨 주신 연락처로 연락드리겠습니다.</p>
       <button type="button" class="c-submit c-ok">확인</button>
     </div>`;
   document.body.appendChild(dlg);
