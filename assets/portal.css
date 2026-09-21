@@ -132,3 +132,12 @@ br.m{display:none}
     text-shadow:0 1px 3px #3a2814cc,0 1px 12px #3a2814aa}
   .arches{margin-top:24px;padding-top:0}
 }
+/* 2026-09-22 사용자 지시: 모바일 첫 화면 아래에 상담 버튼 하나만. PC에는 표시하지 않음 */
+.fold-consult{display:none}
+@media (max-width:899px){
+  .fold-consult{display:flex;align-items:center;justify-content:center;position:absolute;left:50%;transform:translateX(-50%);
+    bottom:calc(max(18px,env(safe-area-inset-bottom)) + 34px);width:min(100%,300px);height:52px;border-radius:999px;
+    background:linear-gradient(180deg,#d2ac66,#b88f4c);color:#2f2016;font-family:var(--sans);font-size:17px;font-weight:700;letter-spacing:.02em;
+    text-shadow:none;box-shadow:0 10px 24px #2a1a0c4d,inset 0 1px 0 #f3dca4}
+  .fold-consult:active{filter:brightness(.97)}
+}
