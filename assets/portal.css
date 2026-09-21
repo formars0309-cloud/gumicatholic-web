@@ -119,33 +119,3 @@ br.m{display:none}
   .seal{justify-self:start}
   .label small{white-space:normal}
 }
-/* 2026-09-22 모바일 정리: 상자 6개가 쌓여 답답하다는 피드백.
-   기관 3개를 반투명 판 하나로 묶고, '홈페이지 바로가기' 문구를 빼고, 배지는 글자로, 전화는 한 줄 글자 링크로. */
-@media (max-width:899px){
-  .arches{gap:0;margin-top:auto;padding:0;border-radius:18px;overflow:hidden;
-    background:linear-gradient(180deg,#fffaf2e8,#f6ecdcde);border:1px solid #fff8eb;
-    box-shadow:0 10px 26px #2a1a0c38;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-  .intro{margin-bottom:28px}
-  .arch{border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:15px 14px 15px 20px}
-  .arch+.arch{border-top:1px solid #e3d2ba}
-  .arch:hover,.arch:focus-visible{outline:2px solid #b88f4c;outline-offset:-3px;background:#fffaf2}
-  .label{grid-template-columns:auto 1fr 22px;grid-template-areas:"b seal i" "s s i";column-gap:10px;row-gap:3px}
-  .label em{display:none}
-  .seal{justify-self:start;padding:0;border:0;background:none;gap:3px;font-size:12px;font-weight:600;color:#8a6a45}
-  .seal svg{width:13px;height:13px}
-  .label i{align-self:center;font-size:19px}
-  .m-tel{display:flex;flex-direction:column;align-items:center;gap:0;margin:10px 0 0}
-  .m-tel a{display:inline;min-height:0;padding:6px 2px;border:0;border-radius:0;background:none;color:#fff6e6;font-size:13.5px;line-height:1.4;white-space:nowrap;
-    text-shadow:0 1px 3px #3a2814cc,0 1px 10px #3a281488}
-  .m-tel b{font-size:14.5px;font-weight:700;color:#fffaf0;margin-left:4px}
-  .privacy{margin-top:4px}
-}
-@media (max-width:359px){
-  .label{grid-template-areas:"b b i" "seal seal i" "s s i"}
-}
-@media (max-width:899px) and (max-height:720px){
-  .intro{margin-top:28px;margin-bottom:20px}
-  .arch{padding-top:11px;padding-bottom:11px}
-  .m-consult{height:50px;margin-top:10px}
-  .m-tel{margin-top:6px}.m-tel a{padding:3px 2px}
-}
