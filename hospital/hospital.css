@@ -202,3 +202,13 @@ html.arrive .stage{animation:arrive .8s cubic-bezier(.2,.7,.3,1) backwards}
 .foot .note{font-size:13px;color:#9a8a78}
 @media (max-width:899px){.cert{margin-top:26px;padding:14px 20px;border-radius:18px}.cert b{font-size:16px}}
 .cert+.sec{border-top:0;padding-top:64px}
+
+/* 윗줄 오른쪽 인증 표시(PC). 휴대폰에서는 본문 배지(.cert)만 보인다 */
+.sites-cert{display:flex;align-items:center;gap:7px;font-family:var(--serif);color:var(--ink-2)}
+.sites-cert svg{width:20px;height:20px;fill:#8a6a3f;flex:none}
+.sites-cert b{font-size:13.5px;font-weight:600}
+.sites-cert small{font-family:var(--sans);font-size:12px;color:var(--muted)}
+@media (min-width:900px){.more>.cert{display:none}.more>.cert+.sec{padding-top:84px}}
+@media (max-width:1180px){.sites-cert small{display:none}}
+@media (max-width:1020px){.sites-cert b{display:none}}
+@media (max-width:899px){.sites-cert{display:none}}

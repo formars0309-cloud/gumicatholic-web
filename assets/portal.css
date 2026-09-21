@@ -76,3 +76,9 @@ html.entering .portal{transform:scale(var(--enter-scale,5));filter:blur(.6px) br
 html.entering .intro,html.entering .top{opacity:0;transition:opacity .25s ease}
 html.entering .enter-veil{opacity:1;transition:opacity .38s ease .42s}
 html.entering body{overflow:hidden}
+
+/* 병원 아치 안 인증 표시 */
+.seal{position:absolute;bottom:calc(100% + .9cqw);left:50%;transform:translateX(-50%);white-space:nowrap;display:inline-flex;align-items:center;gap:.35cqw;padding:.28cqw .8cqw .28cqw .45cqw;border-radius:999px;background:#2a1a0c55;border:1px solid #fff3dc66;font-family:var(--sans);font-size:.82cqw;font-weight:500;letter-spacing:.01em;backdrop-filter:blur(3px)}
+.seal svg{width:1.2cqw;height:1.2cqw;fill:#f3d9a4}
+.seal svg path+path{stroke:#4a321c}
+@media (max-width:899px){.seal{position:static;transform:none;margin-top:10px;padding:4px 11px 4px 7px;gap:5px;font-size:12.5px}.seal svg{width:16px;height:16px}}
