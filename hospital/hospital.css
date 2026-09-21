@@ -239,3 +239,10 @@ button.cta{border:0;cursor:pointer}
   .tour-grid img{border-radius:10px}
   .tour-grid figcaption{margin-top:7px;font-size:14.5px}
 }
+/* 층별 안내 */
+.floors-title{margin:34px 0 12px;font-family:var(--serif);font-size:20px;font-weight:700}
+.floors{margin:0;border-top:1px solid #e3d5c1}
+.floors div{display:grid;grid-template-columns:64px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid #e3d5c1}
+.floors dt{font-weight:700;color:#8a6a45}
+.floors dd{margin:0;font-size:16px;line-height:1.6;color:var(--ink-2)}
+.floors-note{margin:10px 0 0;font-size:13px;color:#9a8a78}
