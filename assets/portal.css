@@ -23,6 +23,7 @@ a{color:inherit;text-decoration:none}
 .intro h1{margin:0;font-size:3.05cqw;font-weight:400;line-height:1.45;letter-spacing:.01em}
 .intro p{margin:1.6cqw 0 0;font-size:1.34cqw;font-weight:400;letter-spacing:-.012em}
 br.m{display:none}
+.menu-toggle,.m-consult{display:none}
 /* 아치 안쪽(사진이 보이는 부분)을 원본 1536×1024에서 픽셀로 잰 값: 위 323, 아래 826, 폭은 아치마다 다름 */
 .arch{top:31.54%;height:49.12%;transition:box-shadow .25s,background .25s}
 .hospital{left:17.45%;width:16.93%;border-radius:50% 50% 0 0/25.8% 25.8% 0 0}
@@ -37,36 +38,11 @@ br.m{display:none}
 .arch:hover i{background:#fff4d833}
 .label em{margin-top:.45cqw;font-family:var(--sans);font-style:normal;font-size:.94cqw;font-weight:500}
 
-/* 모바일: 시안 요소를 세로로 */
-@media (max-width:899px){
-  html{background:#63492f}body{min-height:100svh;background:linear-gradient(160deg,#9b7b51,#63492f)}
-  .stage{display:block;padding:26px 22px 40px}
-  .portal{width:100%;aspect-ratio:auto;background:none;container-type:normal}
-  .top,.intro,.arch,.brand,.menu,.label{position:static}
-  .top{display:flex;flex-direction:column;align-items:center}
-  .brand{gap:10px}
-  .marks{gap:6px}.marks i{width:34px;height:34px}
-  .brand span{font-size:23px;letter-spacing:.12em}
-  .intro{margin-top:28px}
-  .intro h1{font-size:29px;line-height:1.5;white-space:normal}
-  .intro p{margin-top:16px;font-size:16px;line-height:1.8;color:#eedfc6}
-  br.m{display:inline}
-  .menu{order:3;margin-top:20px;gap:18px;font-size:15px}
-  .top{display:contents}
-  .portal{display:flex;flex-direction:column;align-items:center}
-  .intro{order:2}.brand{order:1}
-  .arches{order:4;width:100%;display:grid;gap:18px;margin-top:30px}
-  .arch{display:flex;align-items:center;justify-content:center;width:100%;height:auto;min-height:190px;text-align:center;
-    border:1px solid #d4b48290;background:linear-gradient(135deg,#ffffff10,#fff0c205);border-radius:100px 100px 12px 12px;padding:34px 16px 26px}
-  .label b{font-size:28px}
-  .label small{font-size:16px;margin-top:10px;color:#ebd9ba}
-  .label i{width:40px;height:40px;font-size:18px;margin-top:16px}
-  .label em{font-size:14px;margin-top:12px}
-}
+
 @media (prefers-reduced-motion:reduce){.arch,.label i{transition:none}}
 .menu .menu-consult{padding:.3cqw .9cqw;margin-top:-.3cqw;border:1px solid #fff3dccc;border-radius:999px;background:#fff4d81f}
-@media (max-width:899px){.menu .menu-consult{padding:4px 12px;margin-top:-4px}}
-@media (max-width:899px){.menu{flex-wrap:wrap;justify-content:center;row-gap:14px}.menu a{white-space:nowrap}.menu .menu-consult{flex-basis:100%;text-align:center;padding:10px 12px;margin-top:0}}
+
+
 
 /* ---------- 아치 속으로 들어가기 ---------- */
 .portal{will-change:transform}
@@ -81,4 +57,61 @@ html.entering body{overflow:hidden}
 .seal{position:absolute;bottom:calc(100% + .9cqw);left:50%;transform:translateX(-50%);white-space:nowrap;display:inline-flex;align-items:center;gap:.35cqw;padding:.28cqw .8cqw .28cqw .45cqw;border-radius:999px;background:#2a1a0c55;border:1px solid #fff3dc66;font-family:var(--sans);font-size:.82cqw;font-weight:500;letter-spacing:.01em;backdrop-filter:blur(3px)}
 .seal svg{width:1.2cqw;height:1.2cqw;fill:#f3d9a4}
 .seal svg path+path{stroke:#4a321c}
-@media (max-width:899px){.seal{position:static;transform:none;margin-top:10px;padding:4px 11px 4px 7px;gap:5px;font-size:12.5px}.seal svg{width:16px;height:16px}}
+
+/* ---------- 모바일(900px 미만): 승인 시안 design/portal-mobile-v2/01-cathedral-light ----------
+   배경은 시안에서 글자·버튼을 지운 그림(portal-mobile-bg.jpg). 글자는 PC 대문과 같다. */
+@media (max-width:899px){
+  html{background:#7b6b58}
+  body{background:#7b6b58 url(portal-mobile-bg.jpg) center top/cover no-repeat;min-height:100svh}
+  .stage{display:block;min-height:100svh}
+  .portal{width:100%;min-height:100svh;aspect-ratio:auto;background:none;container-type:normal;
+    display:flex;flex-direction:column;padding:0 16px max(22px,env(safe-area-inset-bottom))}
+  .top,.intro,.arch,.brand,.label,.seal{position:static}
+  .top{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;z-index:5}
+  .brand{gap:8px}
+  .marks{gap:4px}.marks i{width:28px;height:28px}
+  .brand span{font-size:21px;letter-spacing:.06em;text-shadow:0 1px 3px #3a281488,0 1px 12px #3a281466}
+  .menu-toggle{display:grid;align-content:center;gap:5px;width:44px;height:44px;margin-right:-8px;padding:0 10px;border:0;background:none;cursor:pointer}
+  .menu-toggle span{display:block;height:1.5px;background:var(--cream);border-radius:2px;box-shadow:0 0 6px #3a281466;transition:transform .25s,opacity .2s}
+  .menu-open .menu-toggle span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+  .menu-open .menu-toggle span:nth-child(2){opacity:0}
+  .menu-open .menu-toggle span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+  .menu{display:none;position:absolute;top:58px;right:0;left:auto;min-width:200px;flex-direction:column;gap:0;padding:8px;
+    border:1px solid #fff3dc66;border-radius:14px;background:#3a2a1ad9;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    box-shadow:0 12px 30px #2a1a0c55;font-size:16px;text-shadow:none}
+  .menu-open .menu{display:flex}
+  .menu a{padding:13px 14px;border-radius:9px}
+  .menu a:active{background:#fff4d81f}
+  .menu .menu-consult{margin:6px 0 0;padding:13px 14px;border:0;border-radius:9px;background:#fff4d81a;text-align:left}
+
+  .intro{margin-top:clamp(56px,13svh,120px);text-align:center;text-shadow:0 2px 18px #3a2814aa}
+  .intro h1{font-size:clamp(32px,9.4vw,38px);font-weight:500;line-height:1.32;letter-spacing:-.01em}
+  .intro .lead{display:inline-block;margin-bottom:12px;font-size:17px;font-weight:500;letter-spacing:.02em;color:#fff4de;text-shadow:0 1px 3px #3a2814cc,0 2px 16px #3a2814aa}
+  br.m{display:inline}
+
+  .arches{display:grid;gap:10px;margin-top:auto;padding-top:32px}
+  .arch{display:block;width:100%;height:auto;left:auto;top:auto;border-radius:14px;padding:14px 14px 13px 18px;color:#35251a;
+    background:linear-gradient(180deg,#fffaf2e6,#f6ecdcd9);border:1px solid #fff8eb;
+    box-shadow:0 10px 26px #2a1a0c38,inset 0 1px 0 #fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+  .arch:hover,.arch:focus-visible{outline:2px solid #fff0ce;outline-offset:2px;background:#fffaf2}
+  .arch:active{transform:scale(.99)}
+  .label{display:grid;grid-template-columns:1fr auto 22px;grid-template-areas:"b seal seal" "s em i";align-items:center;column-gap:6px;row-gap:5px;text-shadow:none}
+  .label b{grid-area:b;font-size:21px;font-weight:600;line-height:1.25;color:#2f2016}
+  .label small{grid-area:s;margin:0;font-family:var(--sans);font-size:14.5px;color:#5c4636;white-space:nowrap}
+  .seal{grid-area:seal;justify-self:end;transform:none;margin:0;padding:3px 9px 3px 5px;gap:4px;border-radius:999px;
+    background:#fffdf8;border:1px solid #d7bd8f;color:#5a3f22;font-size:12px;font-weight:600;backdrop-filter:none;letter-spacing:-.01em}
+  .seal svg{width:15px;height:15px;fill:#c49a52}
+  .seal svg path+path{stroke:#fffaf3}
+  .label em{grid-area:em;justify-self:end;margin:0;font-size:12.5px;font-weight:500;color:#8a6a45;white-space:nowrap}
+  .label i{grid-area:i;width:22px;height:22px;margin:0;border:0;font-size:16px;color:#8a6a45}
+  .arch:hover i{background:none}
+
+  .m-consult{display:flex;align-items:center;justify-content:center;height:56px;margin-top:12px;border-radius:14px;
+    background:linear-gradient(180deg,#d2ac66,#b88f4c);color:#2f2016;font-family:var(--sans);font-size:18px;font-weight:700;letter-spacing:.02em;
+    box-shadow:0 10px 24px #2a1a0c4d,inset 0 1px 0 #f3dca4}
+  .m-consult:active{transform:scale(.99)}
+}
+@media (max-width:374px){
+  .seal{font-size:11px;padding:2px 7px 2px 4px}.seal svg{width:13px;height:13px}
+  .label b{font-size:19px}.label small{font-size:13.5px}.label em{font-size:11.5px}
+}

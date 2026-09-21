@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-  <link rel="stylesheet" href="assets/portal.css?v=14">
+  <link rel="stylesheet" href="assets/portal.css?v=15">
   <link rel="stylesheet" href="assets/consult.css?v=2">
 </head>
 <body>
@@ -21,21 +21,23 @@
     <div class="portal">
       <header class="top">
         <a class="brand" href="./"><span class="marks" aria-hidden="true"><i><img src="assets/logo-hospital.png" width="120" height="120" alt=""></i><i><img src="nursing-home/logo-mark.png" width="120" height="120" alt=""></i><i><img src="home-care/logo-mark.svg" width="120" height="124" alt=""></i></span><span>구미가톨릭</span></a>
-        <nav class="menu" aria-label="기관 안내">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+        <nav class="menu" id="site-menu" aria-label="기관 안내">
           <a href="hospital/">요양병원</a><a href="nursing-home/">요양원</a><a href="home-care/">재가센터</a><a href="hospital/#contact">오시는 길</a><a class="menu-consult" href="#consult" data-consult="">원클릭 상담 신청</a>
         </nav>
       </header>
       <div class="intro">
-        <h1>나의 부모님을 모시는 곳,<br>하나의 마음, 세 가지 돌봄</h1>
+        <h1><span class="lead">나의 부모님을 모시는 곳,</span><br>하나의 마음,<br class="m"> 세 가지 돌봄</h1>
       </div>
       <nav class="arches" aria-label="기관 홈페이지 선택">
         <a class="arch hospital" href="hospital/"><span class="label"><b>요양병원</b><small>입원 치료와 투석</small><span class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 1.8 3 .1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3 .1L12 22l-2.4-1.8-3-.1-.9-2.9L3.3 15.4l.9-2.9-.9-2.9 2.4-1.8.9-2.9 3-.1z"/><path d="M8.5 12.3l2.3 2.3 4.7-4.9" fill="none" stroke="#fffaf3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>의료기관평가인증원 인증</span><i aria-hidden="true">→</i><em>홈페이지 바로가기</em></span></a>
         <a class="arch nursing" href="nursing-home/"><span class="label"><b>요양원</b><small>함께 생활하는 돌봄</small><span class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 1.8 3 .1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3 .1L12 22l-2.4-1.8-3-.1-.9-2.9L3.3 15.4l.9-2.9-.9-2.9 2.4-1.8.9-2.9 3-.1z"/><path d="M8.5 12.3l2.3 2.3 4.7-4.9" fill="none" stroke="#fffaf3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>2025 장기요양기관 평가 A등급</span><i aria-hidden="true">→</i><em>홈페이지 바로가기</em></span></a>
         <a class="arch home" href="home-care/"><span class="label"><b>재가센터</b><small>집으로 찾아가는 돌봄</small><span class="seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.4 1.8 3 .1.9 2.9 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.9-3 .1L12 22l-2.4-1.8-3-.1-.9-2.9L3.3 15.4l.9-2.9-.9-2.9 2.4-1.8.9-2.9 3-.1z"/><path d="M8.5 12.3l2.3 2.3 4.7-4.9" fill="none" stroke="#fffaf3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>2024 장기요양기관 평가 A등급</span><i aria-hidden="true">→</i><em>홈페이지 바로가기</em></span></a>
       </nav>
+      <a class="m-consult" href="#consult" data-consult="">원클릭 상담 신청</a>
     </div>
   </main>
   <script src="assets/consult.js?v=5" defer></script>
-  <script src="assets/portal-enter.js?v=1" defer></script>
+  <script src="assets/portal-enter.js?v=2" defer></script>
 </body>
 </html>
