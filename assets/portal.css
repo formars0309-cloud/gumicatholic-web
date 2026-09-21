@@ -3,7 +3,7 @@
 :root{--cream:#fff6e6;--serif:'Noto Serif KR','AppleMyungjo','Batang',serif;
   --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif}
 *{box-sizing:border-box}
-body{margin:0;background:#eee3d2;color:var(--cream);font-family:var(--serif);-webkit-font-smoothing:antialiased;word-break:keep-all}
+body{margin:0;background:#fbf8f1;color:var(--cream);font-family:var(--serif);-webkit-font-smoothing:antialiased;word-break:keep-all}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid #fff0ce;outline-offset:4px}
 .stage{min-height:100svh;display:flex;align-items:center;justify-content:center}
@@ -84,10 +84,9 @@ html.entering body{overflow:hidden}
   .menu a:active{background:#fff4d81f}
   .menu .menu-consult{margin:6px 0 0;padding:13px 14px;border:0;border-radius:9px;background:#fff4d81a;text-align:left}
 
-  .intro{margin-top:clamp(56px,13svh,120px);text-align:center;text-shadow:0 2px 18px #3a2814aa}
-  .intro h1{font-size:clamp(32px,9.4vw,38px);font-weight:500;line-height:1.32;letter-spacing:-.01em}
-  .intro .lead{display:inline-block;margin-bottom:12px;font-size:17px;font-weight:500;letter-spacing:.02em;color:#fff4de;text-shadow:0 1px 3px #3a2814cc,0 2px 16px #3a2814aa}
-  br.m{display:inline}
+  .intro{margin-top:clamp(56px,13svh,120px);text-align:center;text-shadow:0 1px 3px #3a2814b3,0 2px 18px #3a2814aa}
+  /* 두 줄: '나의 부모님을 모시는 곳,' / '하나의 마음, 세 가지 돌봄' — 같은 크기로 폭에 맞춘다 */
+  .intro h1{font-size:clamp(22px,7.1vw,32px);font-weight:500;line-height:1.5;letter-spacing:-.02em;white-space:nowrap}
 
   .arches{display:grid;gap:10px;margin-top:auto;padding-top:32px}
   .arch{display:block;width:100%;height:auto;left:auto;top:auto;border-radius:14px;padding:14px 14px 13px 18px;color:#35251a;
@@ -114,4 +113,9 @@ html.entering body{overflow:hidden}
 @media (max-width:374px){
   .seal{font-size:11px;padding:2px 7px 2px 4px}.seal svg{width:13px;height:13px}
   .label b{font-size:19px}.label small{font-size:13.5px}.label em{font-size:11.5px}
+}
+@media (max-width:359px){
+  .label{grid-template-areas:"b b b" "seal seal seal" "s em i"}
+  .seal{justify-self:start}
+  .label small{white-space:normal}
 }
