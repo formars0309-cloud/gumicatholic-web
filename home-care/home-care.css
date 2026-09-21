@@ -1,0 +1,13 @@
+/* 재가센터: 요양병원 페이지(../hospital/hospital.css)의 틀을 그대로 쓰고 필요한 부분만 바꾼다.
+   PC 배경(hero-bg.jpg)은 병원 배경의 아치 속에 동네 풍경을 합성한 것이라 아치 이미지를 따로 얹지 않는다. */
+.board{background-image:url(hero-bg.jpg)}
+.hero h1{font-size:4.45cqw}
+.brand small{letter-spacing:.14em}
+.facts .big{font-size:3.1cqw}
+.foot .note{font-size:13px;color:#9a8a78}
+@media (min-width:900px){.arch{display:none}}
+@media (max-width:899px){
+  .board{background-image:url(../hospital/hero-bg-mobile.jpg)}
+  .hero h1{font-size:clamp(34px,9.4vw,48px)}
+  .facts .big{font-size:28px}
+}

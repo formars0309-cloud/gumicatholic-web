@@ -1,0 +1,62 @@
+/* 구미가톨릭 대문 — 승인 시안(portal-three-arches-bright, 1536×1024)을 HTML로 옮긴 것.
+   PC(900px 이상)는 시안 비율의 판 위에 시안 좌표(%)대로 글자를 얹는다. 1cqw = 시안 15.36px. */
+:root{--cream:#fff6e6;--serif:'Noto Serif KR','AppleMyungjo','Batang',serif;
+  --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:#b59a76;color:var(--cream);font-family:var(--serif);-webkit-font-smoothing:antialiased;word-break:keep-all}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid #fff0ce;outline-offset:4px}
+.stage{min-height:100svh;display:flex;align-items:center;justify-content:center}
+.portal{position:relative;width:min(100%,150svh);aspect-ratio:1536/1024;flex-shrink:0;container-type:inline-size;
+  background:url(portal-bg.jpg) center/100% 100% no-repeat}
+.top,.intro,.arch{position:absolute}
+.top{inset:0 0 auto 0}
+.brand{position:absolute;left:7.05%;top:.55cqw;display:flex;align-items:center;gap:.55cqw}
+.brand img{width:5.45cqw;height:5.45cqw}
+.brand span{font-size:2.45cqw;font-weight:400;letter-spacing:.01em;text-shadow:0 0 1.2cqw #5a3d2066}
+.menu{position:absolute;right:8.4%;top:2.35cqw;display:flex;gap:2.45cqw;font-family:var(--sans);font-size:1.02cqw;font-weight:500;text-shadow:0 1px 6px #4a321c66}
+.menu a:hover{color:#fff}
+.intro{left:0;right:0;top:8.1%;text-align:center;text-shadow:0 0 2cqw #4a321c55}
+.intro h1{margin:0;font-size:4.3cqw;font-weight:400;line-height:1.1;letter-spacing:.01em}
+.intro p{margin:1.25cqw 0 0;font-size:1.34cqw;font-weight:400;letter-spacing:-.012em}
+br.m{display:none}
+.arch{top:29%;height:53%;width:19%;border-radius:50% 50% 0 0/30% 30% 0 0;transition:box-shadow .25s,background .25s}
+.hospital{left:16.5%}.nursing{left:40.5%}.home{left:64.7%}
+.arch:hover,.arch:focus-visible{outline:2px solid #fff0ceaa;outline-offset:3px;box-shadow:0 0 28px #ffe6a966;background:#fff4cf0c}
+.label{position:absolute;left:0;right:0;top:64.4%;display:flex;flex-direction:column;align-items:center;text-shadow:0 1px 10px #2a1a0c99}
+.label b{font-size:2.05cqw;font-weight:500;line-height:1.2}
+.label small{margin-top:.75cqw;font-size:1.1cqw;font-weight:400}
+.label i{display:grid;place-items:center;width:2.8cqw;height:2.8cqw;margin-top:1.45cqw;border:1.5px solid #fff3dccc;border-radius:50%;
+  font-family:var(--sans);font-style:normal;font-size:1.3cqw;transition:background .25s}
+.arch:hover i{background:#fff4d833}
+.label em{margin-top:.45cqw;font-family:var(--sans);font-style:normal;font-size:.94cqw;font-weight:500}
+
+/* 모바일: 시안 요소를 세로로 */
+@media (max-width:899px){
+  html{background:#63492f}body{min-height:100svh;background:linear-gradient(160deg,#9b7b51,#63492f)}
+  .stage{display:block;padding:26px 22px 40px}
+  .portal{width:100%;aspect-ratio:auto;background:none;container-type:normal}
+  .top,.intro,.arch,.brand,.menu,.label{position:static}
+  .top{display:flex;flex-direction:column;align-items:center}
+  .brand{gap:10px}
+  .brand img{width:46px;height:46px}
+  .brand span{font-size:23px;letter-spacing:.12em}
+  .intro{margin-top:28px}
+  .intro h1{font-size:38px;line-height:1.45}
+  .intro p{margin-top:16px;font-size:16px;line-height:1.8;color:#eedfc6}
+  br.m{display:inline}
+  .menu{order:3;margin-top:20px;gap:18px;font-size:15px}
+  .top{display:contents}
+  .portal{display:flex;flex-direction:column;align-items:center}
+  .intro{order:2}.brand{order:1}
+  .arches{order:4;width:100%;display:grid;gap:18px;margin-top:30px}
+  .arch{display:flex;align-items:center;justify-content:center;width:100%;height:auto;min-height:190px;text-align:center;
+    border:1px solid #d4b48290;background:linear-gradient(135deg,#ffffff10,#fff0c205);border-radius:100px 100px 12px 12px;padding:34px 16px 26px}
+  .label b{font-size:28px}
+  .label small{font-size:16px;margin-top:10px;color:#ebd9ba}
+  .label i{width:40px;height:40px;font-size:18px;margin-top:16px}
+  .label em{font-size:14px;margin-top:12px}
+}
+@media (prefers-reduced-motion:reduce){.arch,.label i{transition:none}}
+.menu .menu-consult{padding:.3cqw .9cqw;margin-top:-.3cqw;border:1px solid #fff3dccc;border-radius:999px;background:#fff4d81f}
+@media (max-width:899px){.menu .menu-consult{padding:4px 12px;margin-top:-4px}}

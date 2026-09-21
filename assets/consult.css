@@ -1,0 +1,34 @@
+/* 원클릭 상담 입력 창 — 세 기관 페이지와 대문이 함께 쓴다. */
+dialog.consult{width:min(520px,calc(100% - 24px));max-height:calc(100svh - 24px);overflow:auto;padding:0;border:0;border-radius:20px;
+  background:#fffaf3;color:#3b2416;box-shadow:0 30px 80px -20px #2a180c80;font-family:'Pretendard Variable',Pretendard,-apple-system,sans-serif}
+dialog.consult::backdrop{background:#2a1c1099}
+.consult form,.consult .c-done{position:relative;padding:34px 30px 28px;display:flex;flex-direction:column;gap:14px}
+.consult h2{margin:0;font-family:'Noto Serif KR','AppleMyungjo',serif;font-size:26px;font-weight:700;line-height:1.35}
+.c-eyebrow{margin:0;font-size:14px;font-weight:600;letter-spacing:.1em;color:#9a7650}
+.c-lead{margin:-4px 0 6px;font-size:16px;color:#6a5443}
+.consult label{display:flex;flex-direction:column;gap:7px;font-size:16px;font-weight:600}
+.consult input[type=text],.consult input:not([type]),.consult input[type=tel]{font:inherit;font-size:18px;font-weight:400;padding:14px 16px;border:1px solid #d6c2a8;border-radius:12px;background:#fff;color:#3b2416}
+.consult input:focus-visible{outline:3px solid #b08b6280;outline-offset:1px;border-color:#9a7650}
+.consult fieldset{margin:4px 0 0;padding:0;border:0;display:grid;gap:8px}
+.consult legend{padding:0;margin-bottom:8px;font-size:16px;font-weight:600}
+.c-radio{flex-direction:row!important;align-items:center;gap:12px!important;padding:14px 16px;border:1px solid #d6c2a8;border-radius:12px;background:#fff;cursor:pointer;font-weight:500!important}
+.c-radio:has(input:checked){border-color:#765b45;background:#f3e9dc;box-shadow:inset 0 0 0 1px #765b45}
+.c-radio input,.c-check input{width:20px;height:20px;accent-color:#6c523e;margin:0}
+.c-hp{position:absolute!important;left:-9999px;width:1px;height:1px;overflow:hidden}
+.c-consent{margin-top:4px;padding:14px 16px;border-radius:12px;background:#f3ebdf}
+.c-check{flex-direction:row!important;align-items:center;gap:10px!important;font-size:15px!important}
+.c-consent details{margin-top:8px;font-size:14px;color:#6a5443}
+.c-consent summary{cursor:pointer;font-weight:600}
+.c-consent details p{margin:8px 0 0;line-height:1.7}
+.c-consent a{color:#8a5f35}
+.c-msg{margin:0;min-height:1.4em;font-size:15px;font-weight:600;color:#a0462c}
+.c-submit{font:inherit;font-size:18px;font-weight:700;padding:17px;border:0;border-radius:999px;background:linear-gradient(180deg,#826650,#6c523e);color:#fff;cursor:pointer}
+.c-submit:disabled{opacity:.6;cursor:default}
+.c-close{position:absolute;right:14px;top:10px;border:0;background:none;font-size:30px;line-height:1;color:#8a7461;cursor:pointer;padding:6px}
+.c-done p{margin:0;font-size:17px;line-height:1.7;color:#5e4634}
+@media (max-width:480px){.consult form,.consult .c-done{padding:30px 20px 22px}}
+.consult [hidden]{display:none!important}
+/* 페이지의 FAQ(details) 스타일이 섞이지 않게 되돌린다 */
+.c-consent details{border:0}
+.c-consent summary{padding:0;font-size:14px;font-weight:600;list-style:revert}
+.c-consent summary::after{content:none}
