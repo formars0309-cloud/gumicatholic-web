@@ -44,14 +44,6 @@ br.m{display:none}
 
 
 
-/* ---------- 아치 속으로 들어가기 ---------- */
-.portal{will-change:transform}
-.enter-veil{position:fixed;inset:0;z-index:50;pointer-events:none;background:#f6f0e6;opacity:0}
-html.entering .portal{transform:scale(var(--enter-scale,5));filter:blur(.6px) brightness(1.08);
-  transition:transform .8s cubic-bezier(.55,0,.35,1),filter .8s ease}
-html.entering .intro,html.entering .top{opacity:0;transition:opacity .25s ease}
-html.entering .enter-veil{opacity:1;transition:opacity .38s ease .42s}
-html.entering body{overflow:hidden}
 
 /* 병원 아치 안 인증 표시 */
 .seal{position:absolute;bottom:calc(100% + .9cqw);left:50%;transform:translateX(-50%);white-space:nowrap;display:inline-flex;align-items:center;gap:.35cqw;padding:.28cqw .8cqw .28cqw .45cqw;border-radius:999px;background:#2a1a0c55;border:1px solid #fff3dc66;font-family:var(--sans);font-size:.82cqw;font-weight:500;letter-spacing:.01em;backdrop-filter:blur(3px)}
