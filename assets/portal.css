@@ -60,3 +60,4 @@ br.m{display:none}
 @media (prefers-reduced-motion:reduce){.arch,.label i{transition:none}}
 .menu .menu-consult{padding:.3cqw .9cqw;margin-top:-.3cqw;border:1px solid #fff3dccc;border-radius:999px;background:#fff4d81f}
 @media (max-width:899px){.menu .menu-consult{padding:4px 12px;margin-top:-4px}}
+@media (max-width:899px){.menu{flex-wrap:wrap;justify-content:center;row-gap:14px}.menu a{white-space:nowrap}.menu .menu-consult{flex-basis:100%;text-align:center;padding:10px 12px;margin-top:0}}

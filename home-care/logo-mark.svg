@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 124" role="img" aria-label="구미가톨릭재가노인복지센터 마크">
+  <!-- 요양원 마크의 파랑·빨강 붓 하트를 지붕 있는 집 모양으로 바꾸고, 위에 같은 원(사람)을 둔다. 안의 작은 하트는 병원 마크의 하트 -->
+  <defs>
+    <clipPath id="l"><rect width="60" height="124"/></clipPath>
+    <clipPath id="r"><rect x="60" width="60" height="124"/></clipPath>
+  </defs>
+  <circle cx="60" cy="14" r="8.5" fill="none" stroke="#0848c4" stroke-width="3.6" clip-path="url(#l)"/>
+  <circle cx="60" cy="14" r="8.5" fill="none" stroke="#e8121a" stroke-width="3.6" clip-path="url(#r)"/>
+  <path fill="#0848c4" d="M56 30 C44 38 26 51 9 61 C6 63 7 67 11 66 L20 62 C19 78 23 93 39 105 C47 111 54 115 59 121 C54 111 44 102 37 93 C31 85 29 74 30 59 C39 51 49 43 56 37 Z"/>
+  <path fill="#e8121a" d="M64 30 C76 38 94 51 111 61 C114 63 113 67 109 66 L100 62 C101 78 97 93 81 105 C73 111 66 115 61 121 C66 111 76 102 83 93 C89 85 91 74 90 59 C81 51 71 43 64 37 Z"/>
+  <path fill="#e2873a" d="M60 92 C52 86 45 80 45 72 C45 67 49 64 53 64 C56 64 58 66 60 69 C62 66 64 64 67 64 C71 64 75 67 75 72 C75 80 68 86 60 92 Z"/>
+</svg>
