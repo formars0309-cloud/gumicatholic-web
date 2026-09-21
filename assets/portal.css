@@ -119,3 +119,16 @@ br.m{display:none}
   .seal{justify-self:start}
   .label small{white-space:normal}
 }
+/* 2026-09-22 사용자 지시: 모바일 첫 화면은 그림과 제목만. 기관 카드·상담·전화 버튼은 스크롤해서 아래에서 본다.
+   배경 그림은 첫 화면 높이에만 깔고, 그 아래는 그림 하단 색으로 이어 간다. 안내 문구는 움직임 없음. */
+@media (max-width:899px){
+  body{background:#7b6b58}
+  .portal{isolation:isolate}
+  .portal::before{content:"";position:absolute;left:0;right:0;top:0;height:100svh;z-index:-1;
+    background:linear-gradient(180deg,#7b6b5800 82%,#7b6b58 100%),url(portal-mobile-bg-v3.jpg) center top/cover no-repeat}
+  .intro{position:relative;min-height:calc(100svh - 64px);margin-top:0;padding-top:clamp(56px,13svh,120px)}
+  .intro::after{content:"아래로 내려 기관을 선택하세요  ↓";position:absolute;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom));
+    font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.02em;white-space:pre;color:#fff6e6;
+    text-shadow:0 1px 3px #3a2814cc,0 1px 12px #3a2814aa}
+  .arches{margin-top:24px;padding-top:0}
+}
