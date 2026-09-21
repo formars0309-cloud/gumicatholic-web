@@ -204,6 +204,7 @@ button.cta{border:0;cursor:pointer}
 .cert b{font-family:var(--serif);font-size:18px;color:var(--ink)}
 .cert small{font-size:14px;color:var(--muted)}
 .foot .note{font-size:13px;color:#9a8a78}
+.foot .links a{font-size:14px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
 @media (max-width:899px){.cert{margin-top:26px;padding:14px 20px;border-radius:18px}.cert b{font-size:16px}}
 .cert+.sec{border-top:0;padding-top:64px}
 

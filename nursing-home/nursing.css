@@ -1,16 +1,21 @@
 /* 요양원: 요양병원 페이지(../hospital/hospital.css)의 틀을 그대로 쓰고 필요한 부분만 바꾼다.
-   PC 배경(hero-bg-photo.jpg)은 아치 안을 단색으로 비운 것이고, 그 위에 실사진을 6초마다 순환한다. */
+   PC 배경(hero-bg-photo.jpg)은 아치 안을 단색으로 비운 것이고, 그 위에 실사진을 버튼으로 넘긴다. */
 .board{background-image:url(hero-bg-photo.jpg)}
 .hero h1{font-size:4.45cqw}
 .facts .big.fit{font-size:2.75cqw;line-height:1.55}
 .foot .note{font-size:13px;color:#9a8a78}
-/* 실사진 순환 */
+/* 실사진: 버튼으로 넘김, 전환 효과 없음 */
 .slides{background:#e2d7c8}
-.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.2s ease}
-.slides img.on{opacity:1}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;visibility:hidden}
+.slides img.on{visibility:visible}
+.slide-nav{position:absolute;right:12px;bottom:12px;z-index:2;display:flex;align-items:center;gap:2px;padding:3px;border-radius:999px;
+  background:#2f2016b3;color:#fff6e6;font-family:var(--sans,sans-serif);font-size:13px}
+.slide-nav span{min-width:44px;text-align:center}
+.slide-nav button{width:40px;height:40px;border:0;border-radius:50%;background:none;color:inherit;font-size:24px;line-height:1;cursor:pointer}
+.slide-nav button:hover{background:#fff6e61f}
+.slide-nav button:focus-visible{outline:2px solid #fff0ce;outline-offset:-2px}
 @media (min-width:900px){.arch{left:49.25%;top:19.1%;width:35.2%;height:52%;border-radius:50% 50% 0 0/43.4% 43.4% 0 0}}
 @media (max-width:899px){.slides{position:relative;left:auto;top:auto;height:auto;overflow:hidden;aspect-ratio:4/3.4}.slides img{max-width:none}}
-@media (prefers-reduced-motion:reduce){.slides img{transition:none}}
 @media (max-width:899px){
   .board{background-image:url(../hospital/hero-bg-mobile.jpg)}
   .hero h1{font-size:clamp(34px,9.4vw,48px)}
