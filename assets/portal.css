@@ -19,13 +19,16 @@ a{color:inherit;text-decoration:none}
 .brand span{font-size:2.45cqw;font-weight:400;letter-spacing:.01em;text-shadow:0 0 1.2cqw #5a3d2066}
 .menu{position:absolute;right:8.4%;top:2.35cqw;display:flex;gap:2.45cqw;font-family:var(--sans);font-size:1.02cqw;font-weight:500;text-shadow:0 1px 6px #4a321c66}
 .menu a:hover{color:#fff}
-.intro{left:0;right:0;top:8.1%;text-align:center;text-shadow:0 0 2cqw #4a321c55}
-.intro h1{margin:0;font-size:4.3cqw;font-weight:400;line-height:1.1;letter-spacing:.01em}
-.intro p{margin:1.25cqw 0 0;font-size:1.34cqw;font-weight:400;letter-spacing:-.012em}
+.intro{left:0;right:0;top:12.6%;text-align:center;text-shadow:0 0 2cqw #4a321c55}
+.intro h1{margin:0;font-size:3.05cqw;font-weight:400;line-height:1.2;letter-spacing:.01em;white-space:nowrap}
+.intro p{margin:1.6cqw 0 0;font-size:1.34cqw;font-weight:400;letter-spacing:-.012em}
 br.m{display:none}
-.arch{top:29%;height:53%;width:19%;border-radius:50% 50% 0 0/30% 30% 0 0;transition:box-shadow .25s,background .25s}
-.hospital{left:16.5%}.nursing{left:40.5%}.home{left:64.7%}
-.arch:hover,.arch:focus-visible{outline:2px solid #fff0ceaa;outline-offset:3px;box-shadow:0 0 28px #ffe6a966;background:#fff4cf0c}
+/* 아치 안쪽(사진이 보이는 부분)을 원본 1536×1024에서 픽셀로 잰 값: 위 323, 아래 826, 폭은 아치마다 다름 */
+.arch{top:31.54%;height:49.12%;transition:box-shadow .25s,background .25s}
+.hospital{left:17.45%;width:16.93%;border-radius:50% 50% 0 0/25.8% 25.8% 0 0}
+.nursing{left:40.82%;width:18.1%;border-radius:50% 50% 0 0/27.6% 27.6% 0 0}
+.home{left:65.49%;width:16.99%;border-radius:50% 50% 0 0/25.9% 25.9% 0 0}
+.arch:hover,.arch:focus-visible{outline:2px solid #fff0ceaa;outline-offset:2px;box-shadow:0 0 28px #ffe6a966;background:#fff4cf0c}
 .label{position:absolute;left:0;right:0;top:64.4%;display:flex;flex-direction:column;align-items:center;text-shadow:0 1px 10px #2a1a0c99}
 .label b{font-size:2.05cqw;font-weight:500;line-height:1.2}
 .label small{margin-top:.75cqw;font-size:1.1cqw;font-weight:400}
@@ -45,7 +48,7 @@ br.m{display:none}
   .marks{gap:6px}.marks i{width:34px;height:34px}
   .brand span{font-size:23px;letter-spacing:.12em}
   .intro{margin-top:28px}
-  .intro h1{font-size:38px;line-height:1.45}
+  .intro h1{font-size:29px;line-height:1.5;white-space:normal}
   .intro p{margin-top:16px;font-size:16px;line-height:1.8;color:#eedfc6}
   br.m{display:inline}
   .menu{order:3;margin-top:20px;gap:18px;font-size:15px}
