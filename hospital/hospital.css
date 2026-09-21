@@ -104,8 +104,18 @@ details p{margin:0 0 24px;font-size:17px;line-height:1.8;color:var(--ink-2)}
 .call .num{display:block;margin:10px 0 12px;font-family:var(--serif);font-size:clamp(34px,4vw,46px);font-weight:700;color:#fff;text-decoration:none;letter-spacing:.01em}
 .call .link{margin-top:22px;color:#f1d9b4}
 .family p{margin:12px 0 22px;font-size:17px;color:var(--ink-2)}
-.family div{display:flex;flex-wrap:wrap;gap:12px}
-.family a{padding:13px 22px;border:1px solid #cdb392;border-radius:999px;text-decoration:none;font-weight:600;background:#fffaf3}
+/* 다른 기관: 기관마다 카드 하나. 홈페이지 이동(주)과 전화(보조)를 모양으로 구분한다 */
+.family-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.fam{padding:22px 24px 12px;border:1px solid #e3d3bd;border-radius:16px;background:#fffaf3}
+.fam h3{margin:0;font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink)}
+.family .fam p{margin:6px 0 6px;font-size:15px;color:var(--ink-2)}
+.fam-act{display:flex;align-items:center;justify-content:space-between;gap:4px 16px;flex-wrap:wrap}
+.fam-go{display:inline-flex;align-items:center;min-height:44px;font-weight:700;color:var(--ink);text-decoration:none}
+.fam-go u{text-decoration-color:#c9ad86;text-underline-offset:5px}
+.fam-go span{margin-left:6px}
+.fam-tel{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:14.5px;color:var(--muted);text-decoration:none;letter-spacing:.01em}
+.fam-tel svg{width:14px;height:14px;fill:currentColor}
+.fam-go:hover u{text-decoration-color:currentColor}.fam-tel:hover{color:var(--ink-2)}
 .family h2{font-size:clamp(24px,2.6vw,30px)}
 .foot{padding:36px 0 10px;border-top:1px solid #e3d5c1;font-size:15px;color:var(--muted)}
 .foot b{font-family:var(--serif);font-size:17px;color:var(--ink)}
