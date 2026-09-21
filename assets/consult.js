@@ -6,6 +6,26 @@
   const SERVICES = [['hospital', '요양병원 입원 상담'], ['nursing', '요양원 입소 상담'], ['homecare', '재가 서비스 상담']];
   const PHONES = { hospital: '054-455-8883', nursing: '054-443-0303', homecare: '054-443-0303' };
 
+  // 유입 경로: 주소의 ?src= 또는 utm_source, 없으면 이전 페이지 주소로 판단해 세션 동안 기억한다
+  const SRC_NAMES = { place: '네이버 플레이스', blog: '기관 블로그', naver: '네이버 검색', google: '구글 검색', daum: '다음 검색', kakao: '카카오', direct: '직접 방문' };
+  function source() {
+    try {
+      let v = sessionStorage.getItem('gc-src');
+      if (v) return v;
+      const q = new URLSearchParams(location.search);
+      v = q.get('src') || q.get('utm_source');
+      if (!v) {
+        const r = document.referrer;
+        v = !r || r.includes(location.hostname) ? 'direct'
+          : /search\.naver|m\.search\.naver/.test(r) ? 'naver' : /map\.naver|place\.naver|pcmap\.place/.test(r) ? 'place'
+          : /blog\.naver|tistory/.test(r) ? 'blog' : /google\./.test(r) ? 'google' : /daum\.net/.test(r) ? 'daum'
+          : /kakao/.test(r) ? 'kakao' : 'ref:' + new URL(r).hostname;
+      }
+      v = v.slice(0, 40); sessionStorage.setItem('gc-src', v); return v;
+    } catch { return 'unknown'; }
+  }
+  const SRC = source();
+
   const dlg = document.createElement('dialog');
   dlg.className = 'consult';
   dlg.setAttribute('aria-labelledby', 'consult-title');
@@ -71,7 +91,7 @@
     const f = new FormData(form);
     const data = { patient: f.get('patient').trim(), guardian: f.get('guardian').trim(), phone: f.get('phone').trim(),
       service: f.get('service'), consent: !!f.get('consent'), website: f.get('website'),
-      elapsed: Date.now() - openedAt, page: document.title.split('|')[0].trim() };
+      elapsed: Date.now() - openedAt, page: document.title.split('|')[0].trim(), src: SRC_NAMES[SRC] || SRC };
     const digits = data.phone.replace(/\D/g, '');
     const local = !data.patient || !data.guardian ? 'name' : !/^0\d{8,10}$/.test(digits) ? 'phone'
       : !data.service ? 'service' : !data.consent ? 'consent' : '';
