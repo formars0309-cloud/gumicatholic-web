@@ -127,7 +127,7 @@ br.m{display:none}
   .portal::before{content:"";position:absolute;left:0;right:0;top:0;height:100svh;z-index:-1;
     background:linear-gradient(180deg,#7b6b5800 82%,#7b6b58 100%),url(portal-mobile-bg-v3.jpg) center top/cover no-repeat}
   .intro{position:relative;min-height:calc(100svh - 64px);margin-top:0;padding-top:clamp(56px,13svh,120px)}
-  .intro::after{content:"아래로 내려 기관을 선택하세요  ↓";position:absolute;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom));
+  .intro::after{content:"아래로 내려 병원을 둘러보세요  ↓";position:absolute;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom));
     font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.02em;white-space:pre;color:#fff6e6;
     text-shadow:0 1px 3px #3a2814cc,0 1px 12px #3a2814aa}
   .arches{margin-top:24px;padding-top:0}
@@ -140,4 +140,12 @@ br.m{display:none}
     background:linear-gradient(180deg,#d2ac66,#b88f4c);color:#2f2016;font-family:var(--sans);font-size:17px;font-weight:700;letter-spacing:.02em;
     text-shadow:none;box-shadow:0 10px 24px #2a1a0c4d,inset 0 1px 0 #f3dca4}
   .fold-consult:active{filter:brightness(.97)}
+}
+/* 2026-09-22 사용자 선택: 모바일 첫 화면 배경을 병원 건물 사진(맑은 낮, 전선·현수막·옥상 간판판 정리)으로.
+   하늘을 줄이려고 건물을 키워 아래에 붙인다(그림 높이 119svh → 지붕이 제목 바로 아래). 글자는 남색. */
+@media (max-width:899px){
+  html,body{background:#706e68}
+  .portal::before{background:linear-gradient(180deg,#706e6800 86%,#706e68 100%),url(portal-mobile-building-v1.jpg) center bottom/auto 119svh no-repeat,#b9d5ea}
+  .intro,.brand span{color:#22304a;text-shadow:0 0 16px #ffffffcc,0 0 2px #ffffff}
+  .menu-toggle span{background:#22304a;box-shadow:none}
 }
