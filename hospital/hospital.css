@@ -168,3 +168,11 @@ button.cta{border:0;cursor:pointer}
 
 /* 평가 전체 평균: 우리 점수보다 작고 옅게 */
 .avg{font-size:.78em;color:#8f7a66;white-space:nowrap}
+
+/* 대문 아치를 지나 도착했을 때: 아이보리 빛에서 부드럽게 나타난다 */
+html.arrive{overflow-x:clip}
+html.arrive body{animation:arrive-bg .7s ease-out backwards}
+html.arrive .stage{animation:arrive .8s cubic-bezier(.2,.7,.3,1) backwards}
+@keyframes arrive{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+@keyframes arrive-bg{from{background:#f6f0e6}}
+@media (prefers-reduced-motion:reduce){html.arrive body,html.arrive .stage{animation:none}}
