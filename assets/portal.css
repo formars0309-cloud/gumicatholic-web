@@ -11,8 +11,11 @@ a{color:inherit;text-decoration:none}
   background:url(portal-bg.jpg) center/100% 100% no-repeat}
 .top,.intro,.arch{position:absolute}
 .top{inset:0 0 auto 0}
-.brand{position:absolute;left:7.3%;top:.95cqw;display:flex;align-items:center;gap:.55cqw}
-.brand img{width:4.6cqw;height:4.6cqw}
+.brand{position:absolute;left:7.3%;top:1.35cqw;display:flex;align-items:center;gap:.9cqw}
+.marks{display:flex;gap:.45cqw}
+.marks i{display:grid;place-items:center;width:3.5cqw;height:3.5cqw;border-radius:50%;background:#fff8ec;box-shadow:0 .15cqw .5cqw #4a321c40}
+.marks img{width:84%;height:84%;object-fit:contain}
+.marks i:first-child img{width:100%;height:100%}
 .brand span{font-size:2.45cqw;font-weight:400;letter-spacing:.01em;text-shadow:0 0 1.2cqw #5a3d2066}
 .menu{position:absolute;right:8.4%;top:2.35cqw;display:flex;gap:2.45cqw;font-family:var(--sans);font-size:1.02cqw;font-weight:500;text-shadow:0 1px 6px #4a321c66}
 .menu a:hover{color:#fff}
@@ -39,7 +42,7 @@ br.m{display:none}
   .top,.intro,.arch,.brand,.menu,.label{position:static}
   .top{display:flex;flex-direction:column;align-items:center}
   .brand{gap:10px}
-  .brand img{width:40px;height:40px}
+  .marks{gap:6px}.marks i{width:34px;height:34px}
   .brand span{font-size:23px;letter-spacing:.12em}
   .intro{margin-top:28px}
   .intro h1{font-size:38px;line-height:1.45}
