@@ -247,3 +247,6 @@ button.cta{border:0;cursor:pointer}
 .floors dt{font-weight:700;color:#8a6a45}
 .floors dd{margin:0;font-size:16px;line-height:1.6;color:var(--ink-2)}
 .floors-note{margin:10px 0 0;font-size:13px;color:#9a8a78}
+
+.guide-link{margin:20px 0 0;text-align:center}
+.guide-link a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:4px}
