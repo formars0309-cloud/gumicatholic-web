@@ -227,3 +227,15 @@ button.cta{border:0;cursor:pointer}
   .partner-list b{font-size:clamp(17px,5.4vw,22px)}
   .sec.contact h2{font-size:clamp(20px,6.3vw,30px)}
 }
+/* 병원 둘러보기: 실사진 6장 격자. 움직임 없음 */
+.tour-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tour-grid figure{margin:0}
+.tour-grid img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:14px;background:#e9dfd1}
+.tour-grid figcaption{margin-top:10px;font-size:16px;font-weight:600;color:var(--ink)}
+@media (max-width:899px){
+  .tour-grid{grid-template-columns:1fr 1fr;gap:14px 10px}
+  .tour-grid figure:first-child,.tour-grid figure:last-child{grid-column:1/-1}
+  .tour-grid figure:first-child img,.tour-grid figure:last-child img{aspect-ratio:16/9}
+  .tour-grid img{border-radius:10px}
+  .tour-grid figcaption{margin-top:7px;font-size:14.5px}
+}
