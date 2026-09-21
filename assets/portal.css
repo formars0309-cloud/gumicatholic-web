@@ -53,10 +53,10 @@ br.m{display:none}
 .seal svg path+path{stroke:#4a321c}
 
 /* ---------- 모바일(900px 미만): 승인 시안 design/portal-mobile-v2/01-cathedral-light ----------
-   배경은 시안에서 글자·버튼과 아치 안 빛줄기를 지운 그림(portal-mobile-bg-v2.jpg). 글자는 PC 대문과 같다. */
+   배경은 시안에서 글자·버튼과 아치 안 빛줄기를 지운 그림(portal-mobile-bg-v3.jpg). 글자는 PC 대문과 같다. */
 @media (max-width:899px){
   html{background:#7b6b58}
-  body{background:#7b6b58 url(portal-mobile-bg-v2.jpg) center top/cover no-repeat;min-height:100svh}
+  body{background:#7b6b58 url(portal-mobile-bg-v3.jpg) center top/cover no-repeat;min-height:100svh}
   .stage{display:block;min-height:100svh}
   .portal{width:100%;min-height:100svh;aspect-ratio:auto;background:none;container-type:normal;
     display:flex;flex-direction:column;padding:0 16px max(22px,env(safe-area-inset-bottom))}
