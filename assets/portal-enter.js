@@ -12,3 +12,15 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape') set(false); });
   top.querySelectorAll('.menu a').forEach(a => a.addEventListener('click', () => set(false)));
 })();
+
+// 대문 유입 표식을 기관 홈페이지까지 전달한다. 개인 식별 정보는 저장하지 않는다.
+(() => {
+  const source = new URLSearchParams(location.search).get('src');
+  const validSource = source && /^[a-z0-9][a-z0-9_-]{0,39}$/i.test(source);
+  document.querySelectorAll('a[href="hospital/"],a[href="nursing-home/"],a[href="home-care/"],a[href="hospital/#contact"]').forEach(link => {
+    const target = new URL(link.href);
+    if (validSource) target.searchParams.set('src', source);
+    target.searchParams.set('via', 'portal');
+    link.href = target.href;
+  });
+})();
