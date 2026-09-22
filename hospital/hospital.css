@@ -128,7 +128,7 @@ details p{margin:0 0 24px;font-size:17px;line-height:1.8;color:var(--ink-2)}
 @media (max-width:899px){
   .stage{display:block;min-height:0;padding:0}
   .board{width:100%;aspect-ratio:auto;container-type:normal;box-shadow:none;
-    background:url(hero-bg-mobile.jpg) left top/cover no-repeat,var(--paper)}
+    background:url(hero-bg-mobile-v2.jpg) left top/cover no-repeat,var(--paper)}
   .head,.hero,.facts,.brand,.gnb,.hero h1,.cta,.tel,.arch{position:static}
   .sites{position:sticky;top:0;height:auto;padding:8px 12px;gap:8px;background:#f4ede2ee;backdrop-filter:blur(8px);border-bottom:1px solid #e3d5c1}
   .sites-home{gap:6px;font-size:13px}.sites-home span:last-child{display:none}

@@ -17,7 +17,7 @@
 @media (min-width:900px){.arch{left:49.25%;top:19.1%;width:35.2%;height:52%;border-radius:50% 50% 0 0/43.4% 43.4% 0 0}}
 @media (max-width:899px){.slides{position:relative;left:auto;top:auto;height:auto;overflow:hidden;aspect-ratio:4/3.4}.slides img{max-width:none}}
 @media (max-width:899px){
-  .board{background-image:url(../hospital/hero-bg-mobile.jpg)}
+  .board{background-image:url(../hospital/hero-bg-mobile-v2.jpg)}
   .hero h1{font-size:clamp(34px,9.4vw,48px)}
   .facts .big.fit{font-size:24px}
 }
