@@ -260,3 +260,6 @@ button.cta{border:0;cursor:pointer}
 .staff b{display:block;margin-top:6px;font-family:var(--serif);font-size:24px;font-weight:700;color:var(--ink)}
 .staff small{display:block;margin-top:6px;font-size:16px;line-height:1.6;color:var(--ink-2)}
 @media (max-width:899px){.staff{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.staff.one{grid-template-columns:minmax(0,240px)}.staff b{font-size:20px}.staff small{font-size:15px}}
+.staff+.guide-link{text-align:left}
+.staff.three{grid-template-columns:repeat(3,minmax(0,300px))}
+@media (max-width:899px){.staff.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
