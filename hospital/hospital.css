@@ -250,3 +250,13 @@ button.cta{border:0;cursor:pointer}
 
 .guide-link{margin:20px 0 0;text-align:center}
 .guide-link a{color:inherit;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+/* 의료진·기관장 소개 (2026-09-22 가족 제공 사진) */
+.staff{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,300px));gap:28px}
+.staff.one{grid-template-columns:minmax(0,300px)}
+.staff figure{margin:0}
+.staff img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:18px;background:#e9dfd1}
+.staff figcaption{margin-top:16px}
+.staff .role{display:block;font-size:15px;font-weight:600;letter-spacing:.08em;color:#9a7650}
+.staff b{display:block;margin-top:6px;font-family:var(--serif);font-size:24px;font-weight:700;color:var(--ink)}
+.staff small{display:block;margin-top:6px;font-size:16px;line-height:1.6;color:var(--ink-2)}
+@media (max-width:899px){.staff{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.staff.one{grid-template-columns:minmax(0,240px)}.staff b{font-size:20px}.staff small{font-size:15px}}
