@@ -6,8 +6,8 @@
 body{margin:0;background:#fbf8f1;color:var(--cream);font-family:var(--serif);-webkit-font-smoothing:antialiased;word-break:keep-all}
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid #fff0ce;outline-offset:4px}
-.stage{min-height:100svh;display:flex;align-items:center;justify-content:center}
-.portal{position:relative;width:min(100%,150svh);aspect-ratio:1536/1024;flex-shrink:0;container-type:inline-size;
+.stage{min-height:calc(var(--svh,1svh)*100);display:flex;align-items:center;justify-content:center}
+.portal{position:relative;width:min(100%,calc(var(--svh,1svh)*150));aspect-ratio:1536/1024;flex-shrink:0;container-type:inline-size;
   background:url(portal-bg.jpg) center/100% 100% no-repeat}
 .top,.intro,.arch{position:absolute}
 .top{inset:0 0 auto 0}
@@ -56,9 +56,9 @@ br.m{display:none}
    배경은 시안에서 글자·버튼과 아치 안 빛줄기를 지운 그림(portal-mobile-bg-v3.jpg). 글자는 PC 대문과 같다. */
 @media (max-width:899px){
   html{background:#7b6b58}
-  body{background:#7b6b58 url(portal-mobile-bg-v3.jpg) center top/cover no-repeat;min-height:100svh}
-  .stage{display:block;min-height:100svh}
-  .portal{width:100%;min-height:100svh;aspect-ratio:auto;background:none;container-type:normal;
+  body{background:#7b6b58 url(portal-mobile-bg-v3.jpg) center top/cover no-repeat;min-height:calc(var(--svh,1svh)*100)}
+  .stage{display:block;min-height:calc(var(--svh,1svh)*100)}
+  .portal{width:100%;min-height:calc(var(--svh,1svh)*100);aspect-ratio:auto;background:none;container-type:normal;
     display:flex;flex-direction:column;padding:0 16px max(22px,env(safe-area-inset-bottom))}
   .top,.intro,.arch,.brand,.label,.seal{position:static}
   .top{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;z-index:5}
@@ -78,7 +78,7 @@ br.m{display:none}
   .menu a:active{background:#fff4d81f}
   .menu .menu-consult{margin:6px 0 0;padding:13px 14px;border:0;border-radius:9px;background:#fff4d81a;text-align:left}
 
-  .intro{margin-top:clamp(56px,13svh,120px);text-align:center;text-shadow:0 1px 3px #3a2814b3,0 2px 18px #3a2814aa}
+  .intro{margin-top:clamp(56px,calc(var(--svh,1svh)*13),120px);text-align:center;text-shadow:0 1px 3px #3a2814b3,0 2px 18px #3a2814aa}
   /* 두 줄: '나의 부모님을 모시는 곳,' / '하나의 마음, 세 가지 돌봄' — 같은 크기로 폭에 맞춘다 */
   .intro h1{font-size:clamp(22px,7.1vw,32px);font-weight:500;line-height:1.5;letter-spacing:-.02em;white-space:nowrap}
 
@@ -124,9 +124,9 @@ br.m{display:none}
 @media (max-width:899px){
   body{background:#7b6b58}
   .portal{isolation:isolate}
-  .portal::before{content:"";position:absolute;left:0;right:0;top:0;height:100svh;z-index:-1;
+  .portal::before{content:"";position:absolute;left:0;right:0;top:0;height:calc(var(--svh,1svh)*100);z-index:-1;
     background:linear-gradient(180deg,#7b6b5800 82%,#7b6b58 100%),url(portal-mobile-bg-v3.jpg) center top/cover no-repeat}
-  .intro{position:relative;min-height:calc(100svh - 64px);margin-top:0;padding-top:clamp(56px,13svh,120px)}
+  .intro{position:relative;min-height:calc(var(--svh,1svh)*100 - 64px);margin-top:0;padding-top:clamp(56px,calc(var(--svh,1svh)*13),120px)}
   .intro::after{content:"아래로 내려 병원을 둘러보세요  ↓";position:absolute;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom));
     font-family:var(--sans);font-size:14px;font-weight:600;letter-spacing:.02em;white-space:pre;color:#fff6e6;
     text-shadow:0 1px 3px #3a2814cc,0 1px 12px #3a2814aa}
@@ -142,10 +142,10 @@ br.m{display:none}
   .fold-consult:active{filter:brightness(.97)}
 }
 /* 2026-09-22 사용자 선택: 모바일 첫 화면 배경을 병원 건물 사진(맑은 낮, 전선·현수막·옥상 간판판 정리)으로.
-   하늘을 줄이려고 건물을 키워 아래에 붙인다(그림 높이 119svh → 지붕이 제목 바로 아래). 글자는 남색. */
+   하늘을 줄이려고 건물을 키워 아래에 붙인다(그림 높이 119svh, --svh는 index.html에서 처음 높이로 고정 → 지붕이 제목 바로 아래). 글자는 남색. */
 @media (max-width:899px){
   html,body{background:#706e68}
-  .portal::before{background:linear-gradient(180deg,#706e6800 86%,#706e68 100%),url(portal-mobile-building-v1.jpg) center bottom/auto 119svh no-repeat,#b9d5ea}
+  .portal::before{background:linear-gradient(180deg,#706e6800 86%,#706e68 100%),url(portal-mobile-building-v1.jpg) center bottom/auto calc(var(--svh,1svh)*119) no-repeat,#b9d5ea}
   .intro,.brand span{color:#22304a;text-shadow:0 0 16px #ffffffcc,0 0 2px #ffffff}
   .menu-toggle span{background:#22304a;box-shadow:none}
 }
