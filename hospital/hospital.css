@@ -273,3 +273,23 @@ button.cta{border:0;cursor:pointer}
 .contact-phones dd{margin:0}
 .call .contact-phones .num{font-size:clamp(28px,3vw,40px);line-height:1.4;margin:4px 0 0;padding:4px 0;white-space:nowrap}
 @media(max-width:899px){.cards p,.steps p{font-size:18px}.sec-head .opening-note{padding:16px 18px}}
+
+/* 모바일 기관명·대표전화 겹침 및 앱 내 자동 글자 확대 방지 */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+@media(max-width:899px){
+  .head{display:grid;grid-template-areas:"brand" "phone" "nav";gap:12px}
+  .head .brand{grid-area:brand;min-width:0}
+  .head .brand img{flex-shrink:0}
+  .head .brand span{min-width:0;overflow-wrap:anywhere}
+  .head .head-tel{grid-area:phone;position:static;justify-self:start;max-width:100%;font-size:16px;line-height:1.6;overflow-wrap:anywhere}
+  .head .gnb{grid-area:nav;margin-top:0;min-width:0}
+  .sites{flex-wrap:wrap}
+  .sites-tabs{max-width:100%;flex-wrap:wrap}
+  .sites-tabs a{min-width:0}
+  .hero .tel{white-space:normal;max-width:100%}
+  .hero .tel svg{flex-shrink:0}
+  .hero .tel span{min-width:0;overflow-wrap:anywhere}
+}
+
+/* 기관 로고의 흰색 모서리가 원형 밖으로 보이지 않도록 표시 */
+.brand img,.sites-marks img{border-radius:50%;object-fit:contain}

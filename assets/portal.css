@@ -163,9 +163,14 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
   .stage,.portal,.top,.intro,.arches,.arch,.label{min-width:0;max-width:100%}
   .portal{width:100%;overflow-wrap:anywhere}
   .intro h1{white-space:normal;overflow-wrap:anywhere}
-  .label{grid-template-columns:minmax(0,1fr) auto 22px}
+  .label{grid-template-columns:minmax(0,1fr) minmax(0,1fr) 22px;grid-template-areas:"b b b" "seal seal seal" "s em i"}
+  .seal{justify-self:start}
   .label>*{min-width:0}
   .seal{max-width:100%;white-space:normal}
   .seal svg{flex-shrink:0}
   .label small,.label em{white-space:normal}
 }
+
+/* 로고 원본은 보존하고 기존 크기의 원형 안에 표시 */
+.marks i{overflow:hidden}
+.marks img{border-radius:50%}
