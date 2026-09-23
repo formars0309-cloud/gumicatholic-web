@@ -35,16 +35,33 @@
     figcaption b{display:block;margin-top:4px;font:700 24px/1.4 'Noto Serif KR',serif}
     figcaption small{display:block;margin-top:4px;font-size:15px;color:var(--ink-2)}
     .msg h2{font:600 22px/1.6 'Noto Serif KR',serif;margin:0 0 18px}
-    .msg p{margin:0 0 18px;color:var(--ink-2)}
+    .msg p{margin:0 0 1.8em;color:var(--ink-2)}
+    .msg .sign{margin-top:36px;margin-bottom:0}
     .sign{margin-top:28px;text-align:right;font-family:'Noto Serif KR',serif;color:var(--ink)}
     .sign b{font-size:22px;margin-left:8px}
     .call{display:block;max-width:420px;margin:56px auto 0;text-align:center;background:var(--accent);color:#fff;text-decoration:none;border-radius:10px;padding:14px;font-weight:600}
     @media (max-width:699px){
-      h1{font-size:27px;margin-bottom:28px}
-      .greet{grid-template-columns:1fr;gap:24px}
-      figure{display:grid;grid-template-columns:132px 1fr;gap:18px;align-items:end}
-      figcaption{margin:0}
-      .msg h2{font-size:20px}
+      body{font-size:19px;line-height:1.8;overflow-wrap:anywhere}
+      main{padding:24px 20px 48px}
+      .back{font-size:16px;line-height:1.6;margin-bottom:28px}
+      .back a{display:inline-block;padding:8px 0}
+      .eyebrow{font-size:16px;letter-spacing:.06em}
+      h1{font-size:28px;line-height:1.45;margin-bottom:28px}
+      .greet{grid-template-columns:minmax(0,1fr);gap:32px}
+      .greet+.greet{margin-top:56px;padding-top:40px}
+      figure{display:grid;grid-template-columns:104px minmax(0,1fr);gap:10px 20px;align-items:center;padding:20px;background:#f3eadf;border-radius:16px}
+      figure img{grid-column:1;grid-row:1;width:104px;border-radius:12px;margin-bottom:8px}
+      figcaption{display:contents}
+      .identity{grid-column:2;grid-row:1;min-width:0}
+      .role{font-size:16px;line-height:1.6;letter-spacing:0;color:#725036}
+      figcaption b{font-size:26px;line-height:1.45;margin-top:8px}
+      figcaption small{grid-column:1/-1;font-size:16px;line-height:1.7;margin:0;color:#503c2d}
+      .msg{min-width:0}
+      .msg h2{font-size:24px;line-height:1.55;margin:0 0 28px;text-wrap:pretty}
+      .msg p{font-size:19px;line-height:1.8;margin:0 0 1.8em;color:#423126;text-align:left}
+      .msg .sign{font-size:16px;line-height:1.8;margin:36px 0 0;text-align:right}
+      .sign b{display:block;font-size:23px;margin:8px 0 0}
+      .call{font-size:18px;line-height:1.6;margin-top:40px;padding:16px 12px}
     }
   </style>
 </head>
@@ -54,13 +71,14 @@
   <p class="eyebrow">인사말</p>
   <h1>시설장 인사말</h1>
   <section class="greet">
-    <figure><img src="../staff/director.jpg" width="800" height="1000" alt="신동민 구미가톨릭요양원 시설장"><figcaption><span class="role">요양원 시설장</span><b>신동민</b><small>구미가톨릭요양원<br>시설장</small><small>2025 평가 A등급</small></figcaption></figure>
+    <figure><img src="../staff/director.jpg" width="800" height="1000" alt="신동민 구미가톨릭요양원 시설장"><figcaption><div class="identity"><span class="role">요양원 시설장</span><b>신동민</b></div><small>구미가톨릭요양원<br>시설장</small><small>2025 평가 A등급</small></figcaption></figure>
     <div class="msg">
       <h2>어르신의 하루가 내 집처럼 편안하도록.</h2>
       <p>구미가톨릭요양원을 찾아주셔서 진심으로 감사드립니다.</p>
       <p>어르신을 시설에 모시기까지 가족분들께서 느끼셨을 깊은 고민을 잘 알고 있기에, 신진식 대표원장님의 전문적인 의료 총괄 하에 식사, 위생, 이동 등 일상을 밀착 케어하며 전문 물리치료와 여가 프로그램으로 건강하고 활기찬 하루를 선물하고자 합니다.</p>
       <p>특히 저희 요양원은 구미가톨릭요양병원과 함께 위치하여 응급 상황 발생 시 즉각적인 의료 대처가 가능하며, 병원 영양사가 직접 구성하는 맞춤형 질환별 식단을 제공하여 전문적인 영양 관리를 자랑합니다.</p>
-      <p>국민건강보험공단 2025년 장기요양기관 정기평가 A등급(최우수)에 걸맞게 정성을 다하겠습니다. 또한 재가노인복지센터 시설장도 겸임하고 있어 자택에서 방문 돌봄을 받을 수 있도록 입소와 함께 방문 요양, 방문 간호, 방문 목욕 서비스도 연계해서 상담하고 제공해 드리도록 하겠습니다.</p>
+      <p>국민건강보험공단 2025년 장기요양기관 정기평가 A등급(최우수)에 걸맞게 정성을 다하겠습니다.</p>
+      <p>또한 재가노인복지센터 시설장도 겸임하고 있어 자택에서 방문 돌봄을 받을 수 있도록 입소와 함께 방문 요양, 방문 간호, 방문 목욕 서비스도 연계해서 상담하고 제공해 드리도록 하겠습니다.</p>
       <p class="sign">구미가톨릭요양원 시설장 <b>신동민</b></p>
     </div>
   </section>
