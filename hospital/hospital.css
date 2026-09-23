@@ -263,3 +263,13 @@ button.cta{border:0;cursor:pointer}
 .staff+.guide-link{text-align:left}
 .staff.three{grid-template-columns:repeat(3,minmax(0,300px))}
 @media (max-width:899px){.staff.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* 2026-09-23 사용자 확인 서비스·상담 연락처 */
+.cards p+p,.steps p+p{margin-top:1.25em}
+.sec-head .opening-note{display:inline-block;margin-top:20px;padding:18px 22px;border:1px solid #dac7ac;border-radius:12px;background:#f6eee1;font-size:17px;line-height:1.8}
+.opening-note strong{color:var(--ink)}
+.contact-phones{margin:22px 0;display:grid;gap:18px}
+.contact-phones dt{font-size:16px;line-height:1.6;color:#e7d6bf}
+.contact-phones dd{margin:0}
+.call .contact-phones .num{font-size:clamp(28px,3vw,40px);line-height:1.4;margin:4px 0 0;padding:4px 0;white-space:nowrap}
+@media(max-width:899px){.cards p,.steps p{font-size:18px}.sec-head .opening-note{padding:16px 18px}}
