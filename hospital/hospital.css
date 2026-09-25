@@ -187,36 +187,37 @@ button.cta{border:0;cursor:pointer}
 }
 
 /* ---------- PC 양옆 여백: 층별 안내(왼쪽)·진료협력병원(오른쪽) ----------
-   첫 화면 판(.board) 바깥 여백 폭에 맞춰 화면에 고정한다. 움직임 연출 없음.
+   첫 화면 판(.board) 바깥 여백을 거의 다 쓴다. 글자는 여백 폭(cqw)에 맞춰 커진다. 움직임 연출 없음.
    여백이 150px보다 좁으면 내용을 숨기고, 모바일은 따로 구현한다. */
 .rail{display:none}
 @media (min-width:900px) and (min-height:640px){
   /* 폭 = 첫 화면 판 바깥 여백과 아래 본문(.more 1160px) 바깥 여백 중 좁은 쪽 */
   .rail{--gut:min(calc((100vw - min(100vw - 2*min(5cm,6vw), (100svh - 80px)*1.5))/2), calc((100vw - 1160px)/2 + 20px));
-    position:fixed;top:64px;bottom:20px;z-index:5;width:var(--gut);display:flex;align-items:center;justify-content:center;
-    padding:0 14px;box-sizing:border-box;container-type:inline-size;pointer-events:none;font-family:var(--serif)}
+    position:fixed;top:62px;bottom:14px;z-index:5;width:var(--gut);display:flex;align-items:center;justify-content:center;
+    padding:0 6px;box-sizing:border-box;container-type:inline-size;pointer-events:none;font-family:var(--serif)}
   .rail-l{left:0}.rail-r{right:0}
 }
 @container (max-width:150px){.rail-in{display:none}}
-.rail-in{width:100%;max-width:200px;pointer-events:auto;background:linear-gradient(#fbf6ee,#f5ece0);border:1px solid #e6d5bd;
-  border-radius:999px 999px 14px 14px;padding:40px 12px 14px;box-sizing:border-box;box-shadow:0 16px 40px -28px #5a3e2266}
+.rail-in{width:100%;max-width:260px;max-height:100%;overflow:hidden;pointer-events:auto;background:linear-gradient(#fbf6ee,#f5ece0);border:1px solid #e6d5bd;
+  border-radius:16px;padding:18px 10px 12px;box-sizing:border-box;box-shadow:0 16px 40px -28px #5a3e2266}
 .rail ul,.rail ol{list-style:none;margin:0;padding:0}
-.rail-t{margin:0 0 12px;text-align:center;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.08em}
-.rail-t span{display:block;margin-bottom:3px;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.22em;color:#a8845c}
-.rail-bld{margin:0;border-radius:90px 90px 6px 6px;overflow:hidden}
+.rail-t{margin:0 0 12px;text-align:center;font-size:clamp(18px,13cqw,28px);font-weight:700;color:var(--ink);letter-spacing:.04em;line-height:1.25}
+.rail-t span{display:block;margin-bottom:4px;font-family:var(--sans);font-size:clamp(10px,6cqw,13px);font-weight:600;letter-spacing:.16em;color:#a8845c}
+.rail-bld{margin:0;border-radius:10px;overflow:hidden}
 .rail-bld img{display:block;width:100%;height:auto}
-.rail .rail-fl{margin-top:10px;border-top:1px solid #d9c3a6}
-.rail-fl li{display:grid;grid-template-columns:36px 1fr;gap:6px;align-items:baseline;padding:6px 0;border-bottom:1px solid #e3d5c1}
-.rail-fl b{font-size:13px;font-weight:700;color:#8a6a48}
-.rail-fl span{font-family:var(--sans);font-size:11.5px;line-height:1.45;color:var(--ink-2)}
-.rail-cards{display:grid;gap:9px}
-.rail-cards li{aspect-ratio:16/9.6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
-  background:url(rail/plaque-stone.jpg) center/cover;border-radius:3px;box-shadow:0 6px 10px -6px #6b4b2a66,inset 0 0 0 1px #ffffff55}
-.rail-cards img{display:block;height:44%;width:auto;max-width:78%;object-fit:contain}
-.rail-cards .logo-cha{height:27%}.rail-cards .logo-sch{height:30%}.rail-cards .logo-dcmc{height:52%}.rail-cards .logo-fatima{height:42%}
-.rail-cards b{padding:0 6px;font-size:12px;font-weight:700;line-height:1.25;text-align:center;color:var(--ink);letter-spacing:-.01em}
-/* 화면 높이가 낮으면 건물 그림을 빼고 명판을 납작하게 */
-@media (max-height:780px){.rail-bld{display:none}.rail-in{padding-top:30px}.rail-cards{gap:7px}.rail-cards li{aspect-ratio:16/8}}
+.rail .rail-fl{margin-top:8px;border-top:1px solid #d9c3a6}
+.rail-fl li{display:grid;grid-template-columns:2.3em 1fr;gap:6px;align-items:baseline;padding:7px 2px;border-bottom:1px solid #e3d5c1;font-size:clamp(14px,9.6cqw,21px)}
+.rail-fl b{font-size:1em;font-weight:700;color:#8a6a48;white-space:nowrap}
+.rail-fl span{font-family:var(--sans);font-size:.9em;font-weight:500;line-height:1.35;color:var(--ink)}
+.rail-cards{display:grid;grid-template-columns:minmax(0,1fr);gap:8px}
+.rail-cards li{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:12px 8px 11px;
+  background:url(rail/plaque-stone.jpg) center/cover;border-radius:10px;box-shadow:0 6px 10px -6px #6b4b2a66,inset 0 0 0 1px #ffffff55}
+.rail-cards img{display:block;height:clamp(34px,26cqw,60px);width:auto;max-width:86%;object-fit:contain}
+.rail-cards .logo-cha{height:clamp(22px,16cqw,38px)}.rail-cards .logo-sch{height:clamp(26px,19cqw,44px)}
+.rail-cards b{font-size:clamp(14px,9.6cqw,21px);font-weight:700;line-height:1.25;text-align:center;color:var(--ink);letter-spacing:-.02em}
+/* 화면 높이가 낮으면 건물 그림을 빼고 로고를 줄인다 */
+@media (max-height:960px){.rail-bld{display:none}}
+@media (max-height:820px){.rail-cards li{padding:8px 6px}.rail-cards img{height:clamp(26px,18cqw,40px)}.rail-cards .logo-cha,.rail-cards .logo-sch{height:clamp(18px,12cqw,28px)}}
 
 /* 평가 전체 평균: 우리 점수보다 작고 옅게 */
 .avg{font-size:.78em;color:#8f7a66;white-space:nowrap}
