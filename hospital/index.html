@@ -24,7 +24,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
-  <link rel="stylesheet" href="hospital.css?v=20260926-rail2">
+  <link rel="stylesheet" href="hospital.css?v=20260926-notice1">
   <link rel="preload" as="image" href="hero-bg.jpg" media="(min-width: 900px)">
   <link rel="stylesheet" href="../assets/consult.css?v=20260922-release1">
 </head>
@@ -181,6 +181,25 @@
   <aside class="rail rail-l" aria-label="층별 안내"><div class="rail-in"><p class="rail-t"><span>FLOOR GUIDE</span>층별 안내</p><figure class="rail-bld"><img src="rail/building-sketch.jpg" width="400" height="600" alt="" loading="lazy"></figure><ol class="rail-fl"><li><b>6–8F</b><span>구미가톨릭요양원</span></li><li><b>5F</b><span>입원실</span></li><li><b>3F</b><span>입원실 · 격리병실</span></li><li><b>2F</b><span>인공신장센터 · 재활센터 · 물리치료실</span></li><li><b>1F</b><span>진료실 · 원무과 · 약국</span></li><li><b>B1</b><span>장례식장</span></li></ol></div></aside>
   <aside class="rail rail-r" aria-label="진료협력병원"><div class="rail-in"><p class="rail-t"><span>PARTNER HOSPITALS</span>진료협력병원</p><ul class="rail-cards"><li><img class="logo-cha" src="rail/logo-cha.png" alt="" loading="lazy"><b>구미차병원</b></li><li><img class="logo-sch" src="rail/logo-sch.png" alt="" loading="lazy"><b>순천향대학교 구미병원</b></li><li><img class="logo-dcmc" src="rail/logo-dcmc.png" alt="" loading="lazy"><b>대구가톨릭<wbr>대학교병원</b></li><li><img class="logo-dongsan" src="rail/logo-dongsan.png" alt="" loading="lazy"><b>계명대학교 동산병원</b></li><li><img class="logo-fatima" src="rail/logo-fatima.png" alt="" loading="lazy"><b>대구파티마병원</b></li></ul></div></aside>
   <div class="mbar"><button type="button" data-consult="hospital">원클릭 상담하기</button><a href="tel:0544558883" aria-label="전화 054-455-8883">전화</a></div>
+  <!-- 공지 팝업: 2층 재활센터 개소. 움직임 연출 없음. "오늘 하루 보지 않기"는 이 브라우저에만 저장 -->
+  <dialog class="notice" id="notice-rehab" tabindex="-1" aria-labelledby="notice-rehab-title">
+    <img class="n-photo" src="rehab-center.jpg" width="1200" height="675" alt="2층 재활센터 내부. 넓은 마루 바닥에 재활 운동기구가 놓여 있다">
+    <div class="n-body">
+      <p class="n-eyebrow">새 소식</p>
+      <h2 id="notice-rehab-title">2층 재활센터를 열었습니다</h2>
+      <p>재활 운동기구를 갖춘 재활센터를 병원 2층에 새로 마련했습니다. 이용 방법은 상담으로 안내해 드립니다.</p>
+      <div class="n-act"><button type="button" class="n-main" data-consult="hospital">상담 문의하기</button><button type="button" class="n-close" data-notice-close>닫기</button></div>
+      <button type="button" class="n-today" data-notice-today>오늘 하루 보지 않기</button>
+    </div>
+  </dialog>
+  <script>
+  (function(){var d=document.getElementById('notice-rehab');if(!d||!d.showModal)return;var K='notice-rehab-hide',t=0;
+    try{t=+localStorage.getItem(K)||0}catch(e){}
+    if(Date.now()<t)return;
+    d.addEventListener('click',function(e){if(e.target===d||e.target.closest('[data-notice-close],[data-consult]'))d.close();
+      if(e.target.closest('[data-notice-today]')){try{var n=new Date();n.setHours(24,0,0,0);localStorage.setItem(K,n.getTime())}catch(e){}d.close()}});
+    d.showModal();d.focus();})();
+  </script>
   <script src="../assets/consult.js?v=20260922-release1" defer></script>
 </body>
 </html>

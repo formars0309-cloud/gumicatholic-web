@@ -314,3 +314,20 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
 /* 기관 로고의 흰색 모서리가 원형 밖으로 보이지 않도록 표시 */
 .brand img,.sites-marks img{border-radius:50%;object-fit:contain}
+
+/* ---------- 공지 팝업(재활센터 개소) ---------- */
+dialog.notice{width:min(460px,calc(100% - 32px));max-height:calc(100svh - 32px);overflow:auto;padding:0;border:0;border-radius:18px;
+  background:#fffaf3;color:var(--ink);box-shadow:0 30px 80px -20px #2a180c80;font-family:var(--sans)}
+dialog.notice::backdrop{background:#2a1c1080}
+.n-photo{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
+.n-body{padding:24px 26px 18px;text-align:center}
+.n-eyebrow{margin:0 0 6px;font-size:14px;font-weight:600;letter-spacing:.12em;color:#9a7650}
+.notice h2{margin:0;font-family:var(--serif);font-size:26px;font-weight:700;line-height:1.35}
+.n-body>p:not(.n-eyebrow){margin:12px 0 20px;font-size:18px;line-height:1.7;color:var(--ink-2)}
+.n-act{display:flex;gap:10px}
+.n-act button{flex:1;min-height:52px;border-radius:999px;font:inherit;font-size:17px;font-weight:700;cursor:pointer}
+.n-main{border:0;background:var(--btn);color:#fff}
+.n-close{border:1px solid #d9c3a6;background:#fff;color:var(--ink)}
+.n-today{margin-top:12px;border:0;background:none;padding:8px;font:inherit;font-size:15px;color:var(--muted);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+@media (max-width:420px){.n-body{padding:20px 18px 14px}.notice h2{font-size:23px}.n-body>p:not(.n-eyebrow){font-size:17px}}
+dialog.notice:focus{outline:none}
