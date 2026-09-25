@@ -186,14 +186,37 @@ button.cta{border:0;cursor:pointer}
   .mbar a{display:grid;place-items:center;padding:0 20px;border-radius:14px;background:#f1d9b4;color:#3b2416;text-decoration:none;font-weight:700;box-shadow:0 10px 30px -10px #0006}
 }
 
-/* ---------- 진료협력병원 ---------- */
-.partner-list{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-.partner-list li{display:flex;align-items:center;gap:20px;padding:26px 28px;border:1px solid #e3d3bd;border-radius:18px;background:#fffaf3}
-.p-mark{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:50%;background:#efe3d2;color:#6c523e;font-family:var(--serif);font-size:26px;font-weight:700}
-.p-mark img{width:100%;height:100%;object-fit:contain;border-radius:0}
-.partner-list b{display:block;font-family:var(--serif);font-size:22px}
-.partner-list small{display:block;margin-top:4px;font-size:15px;color:var(--muted)}
-@media (max-width:899px){.partner-list{grid-template-columns:1fr}}
+/* ---------- PC 양옆 여백: 층별 안내(왼쪽)·진료협력병원(오른쪽) ----------
+   첫 화면 판(.board) 바깥 여백 폭에 맞춰 화면에 고정한다. 움직임 연출 없음.
+   여백이 150px보다 좁으면 내용을 숨기고, 모바일은 따로 구현한다. */
+.rail{display:none}
+@media (min-width:900px) and (min-height:640px){
+  /* 폭 = 첫 화면 판 바깥 여백과 아래 본문(.more 1160px) 바깥 여백 중 좁은 쪽 */
+  .rail{--gut:min(calc((100vw - min(100vw - 2*min(5cm,6vw), (100svh - 80px)*1.5))/2), calc((100vw - 1160px)/2 + 20px));
+    position:fixed;top:64px;bottom:20px;z-index:5;width:var(--gut);display:flex;align-items:center;justify-content:center;
+    padding:0 14px;box-sizing:border-box;container-type:inline-size;pointer-events:none;font-family:var(--serif)}
+  .rail-l{left:0}.rail-r{right:0}
+}
+@container (max-width:150px){.rail-in{display:none}}
+.rail-in{width:100%;max-width:200px;pointer-events:auto;background:linear-gradient(#fbf6ee,#f5ece0);border:1px solid #e6d5bd;
+  border-radius:999px 999px 14px 14px;padding:40px 12px 14px;box-sizing:border-box;box-shadow:0 16px 40px -28px #5a3e2266}
+.rail ul,.rail ol{list-style:none;margin:0;padding:0}
+.rail-t{margin:0 0 12px;text-align:center;font-size:15px;font-weight:700;color:var(--ink);letter-spacing:.08em}
+.rail-t span{display:block;margin-bottom:3px;font-family:var(--sans);font-size:9px;font-weight:600;letter-spacing:.22em;color:#a8845c}
+.rail-bld{margin:0;border-radius:90px 90px 6px 6px;overflow:hidden}
+.rail-bld img{display:block;width:100%;height:auto}
+.rail .rail-fl{margin-top:10px;border-top:1px solid #d9c3a6}
+.rail-fl li{display:grid;grid-template-columns:36px 1fr;gap:6px;align-items:baseline;padding:6px 0;border-bottom:1px solid #e3d5c1}
+.rail-fl b{font-size:13px;font-weight:700;color:#8a6a48}
+.rail-fl span{font-family:var(--sans);font-size:11.5px;line-height:1.45;color:var(--ink-2)}
+.rail-cards{display:grid;gap:9px}
+.rail-cards li{aspect-ratio:16/9.6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  background:url(rail/plaque-stone.jpg) center/cover;border-radius:3px;box-shadow:0 6px 10px -6px #6b4b2a66,inset 0 0 0 1px #ffffff55}
+.rail-cards img{display:block;height:44%;width:auto;max-width:78%;object-fit:contain}
+.rail-cards .logo-cha{height:27%}.rail-cards .logo-sch{height:30%}.rail-cards .logo-dcmc{height:52%}.rail-cards .logo-fatima{height:42%}
+.rail-cards b{padding:0 6px;font-size:12px;font-weight:700;line-height:1.25;text-align:center;color:var(--ink);letter-spacing:-.01em}
+/* 화면 높이가 낮으면 건물 그림을 빼고 명판을 납작하게 */
+@media (max-height:780px){.rail-bld{display:none}.rail-in{padding-top:30px}.rail-cards{gap:7px}.rail-cards li{aspect-ratio:16/8}}
 
 /* 평가 전체 평균: 우리 점수보다 작고 옅게 */
 .avg{font-size:.78em;color:#8f7a66;white-space:nowrap}
@@ -220,11 +243,8 @@ button.cta{border:0;cursor:pointer}
 @media (max-width:1180px){.sites-cert small{display:none}}
 @media (max-width:1020px){.sites-cert b{display:none}}
 @media (max-width:899px){.sites-cert{display:none}}
-/* 360px 폭 가로 넘침 방지: 협력병원 카드와 긴 기관명 제목 */
+/* 360px 폭 가로 넘침 방지: 긴 기관명 제목 */
 @media (max-width:399px){
-  .partner-list li{gap:14px;padding:20px 18px}
-  .partner-list li>div{min-width:0}
-  .partner-list b{font-size:clamp(17px,5.4vw,22px)}
   .sec.contact h2{font-size:clamp(20px,6.3vw,30px)}
 }
 /* 병원 둘러보기: 실사진 6장 격자. 움직임 없음 */
