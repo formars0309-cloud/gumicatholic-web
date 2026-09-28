@@ -24,8 +24,8 @@
       <div class="c-consent">
         <label class="c-check"><input type="checkbox" name="consent" required><span>개인정보 수집·이용에 동의합니다. (필수)</span></label>
         <details><summary>자세히 보기</summary>
-          <p>수집 항목: 연락받을 분의 이름, 전화번호, 희망 상담<br>
-          이용 목적: 상담 신청 확인과 연락<br>
+          <p>수집 항목: 연락받을 분의 이름, 전화번호, 희망 상담, 방문 경로(채널 구분)<br>
+          이용 목적: 상담 신청 확인과 연락, 방문 경로는 채널별 건수 집계<br>
           보유 기간: 상담 완료 시 삭제, 미완료 건도 접수 후 최대 7일<br>
           신청 내용은 선택하신 기관의 상담 담당자와 운영 관리자가 참여한 텔레그램 상담방에 전달되며, 이 과정에서 국외 서버를 거칩니다.<br>
           동의하지 않으시면 신청할 수 없으며, 전화로 상담하실 수 있습니다. <a href="${PRIVACY}" target="_blank" rel="noopener">개인정보 처리방침</a></p>
@@ -65,12 +65,33 @@
   const ERR = { outdated: '상담창이 변경되었습니다. 페이지를 새로고침한 후 다시 신청해 주세요.', name: '연락받을 분의 이름을 입력해 주세요.', phone: '연락처를 숫자로 정확히 입력해 주세요.', service: '희망하는 상담을 골라 주세요.',
     consent: '개인정보 수집·이용에 동의해 주세요.', wait: '잠시 후 다시 신청해 주세요.', too_fast: '잠시 후 다시 신청해 주세요.' };
 
+  // 유입 경로: ?src= 부호, 없으면 이전 페이지 주소의 종류만 판단해 탭을 닫을 때까지 기억한다. 주소 원문은 보내지 않는다.
+  const SRC = (() => {
+    try {
+      const saved = sessionStorage.getItem('gc-src');
+      if (saved) return saved;
+      let v = new URLSearchParams(location.search).get('src') || '';
+      if (!/^[a-z0-9][a-z0-9_-]{0,39}$/i.test(v)) {
+        const r = document.referrer;
+        const host = r ? new URL(r).hostname : '';
+        v = !host || host.endsWith('gumicatholic.kr') ? 'direct'
+          : /(^|\.)(map|place|pcmap\.place|m\.place)\.naver\.com$/.test(host) ? 'place'
+          : /(^|\.)blog\.naver\.com$/.test(host) ? 'blog'
+          : /(^|\.)search\.naver\.com$/.test(host) ? 'naver'
+          : /(^|\.)google\./.test(host) ? 'google' : /(^|\.)daum\.net$/.test(host) ? 'daum'
+          : /kakao/.test(host) ? 'kakao' : 'other';
+      }
+      sessionStorage.setItem('gc-src', v);
+      return v;
+    } catch { return ''; }
+  })();
+
   form.addEventListener('submit', async e => {
     e.preventDefault();
     const f = new FormData(form);
     const data = { formVersion: '2026-09-22', contact: f.get('contact').trim(), phone: f.get('phone').trim(),
       service: f.get('service'), consent: !!f.get('consent'), website: f.get('website'),
-      elapsed: Date.now() - openedAt };
+      elapsed: Date.now() - openedAt, src: SRC };
     const digits = data.phone.replace(/\D/g, '');
     const local = !data.contact ? 'name' : !/^0\d{8,10}$/.test(digits) ? 'phone'
       : !data.service ? 'service' : !data.consent ? 'consent' : '';
