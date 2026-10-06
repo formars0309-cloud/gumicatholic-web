@@ -87,6 +87,11 @@ img{display:block;max-width:100%}
 .steps span{font-family:var(--serif);font-size:30px;font-weight:700;color:#b08b62}
 .cost{margin-top:56px;display:grid;grid-template-columns:1fr 1.2fr;gap:40px;background:var(--ivory);border-radius:22px;padding:44px}
 .cost h3{margin:0;font-family:var(--serif);font-size:26px;line-height:1.5}
+.cost h3 small{font-family:var(--sans);font-size:18px;font-weight:500;color:var(--ink-2)}
+.cost .cost-note{margin:20px 0 0;font-size:16px}
+.admission-action{max-width:640px;margin:28px 0 0}
+.admission-action .c-open{background:var(--btn);color:#fff}
+.admission-action p{font-size:16px;line-height:1.8;color:var(--ink-2)}
 .cost p{margin:0 0 16px;font-size:17px;line-height:1.8;color:var(--ink-2)}
 .cost ul{margin:0;padding:0;list-style:none}
 .cost li{padding:13px 0;border-bottom:1px solid #e6d7c2;font-size:18px;font-weight:500}
