@@ -17,3 +17,8 @@
 
 .scene-caption{position:absolute;left:49.25%;top:72%;width:35.1%;margin:0;text-align:center;font-size:clamp(12px,1cqw,16px);line-height:1.5;color:#5e4634}
 @media(max-width:899px){.scene-caption{position:static;width:auto;margin:10px 0 0;font-size:12px}}
+
+.place-photo{margin:6px 0 0;max-width:300px}
+.place-photo img{display:block;width:100%;height:auto;border-radius:12px}
+.place-photo figcaption{margin:10px 0 18px;font-size:14px;line-height:1.6;color:var(--muted)}
+@media(max-width:899px){.place-photo{max-width:240px}}
