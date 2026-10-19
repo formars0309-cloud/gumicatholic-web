@@ -1,5 +1,5 @@
 /* 구미가톨릭 대문 — 승인 시안(portal-three-arches-bright, 1536×1024)을 HTML로 옮긴 것.
-   PC(900px 이상)는 화면 너비를 모두 쓰고 시안 좌표(%)대로 글자를 얹는다. 1cqw = 시안 15.36px. */
+   PC(900px 이상)는 창의 가로·세로를 채우고, 글자 크기는 두 변에 맞춰 조정한다. */
 :root{--cream:#fff6e6;--serif:'Noto Serif KR','AppleMyungjo','Batang',serif;
   --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif}
 *{box-sizing:border-box}
@@ -7,26 +7,27 @@ body{margin:0;background:#fbf8f1;color:var(--cream);font-family:var(--serif);-we
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid #fff0ce;outline-offset:4px}
 .stage{min-height:calc(var(--svh,1svh)*100);display:flex;align-items:center;justify-content:center}
-.portal{position:relative;width:100%;min-height:calc(var(--svh,1svh)*100);aspect-ratio:1536/1024;flex-shrink:0;container-type:inline-size;
-  background:url(portal-bg.jpg) center/100% 100% no-repeat}
+.portal{--portal-unit:min(1vw,calc(var(--svh,1svh)*1.5));--portal-art-height:calc(var(--svh,1svh)*100);
+  position:relative;width:100%;height:calc(var(--svh,1svh)*100);flex-shrink:0;container-type:inline-size;
+  background:linear-gradient(0deg,#f6e6cdf0,transparent 24%),url(portal-bg.jpg) center/100% 100% no-repeat}
 .top,.intro,.arch{position:absolute}
 .top{inset:0 0 auto 0}
-.brand{position:absolute;left:7.3%;top:1.35cqw;display:flex;align-items:center;gap:.9cqw}
-.marks{display:flex;gap:.45cqw}
-.marks i{display:grid;place-items:center;width:3.5cqw;height:3.5cqw;border-radius:50%;background:#fff8ec;box-shadow:0 .15cqw .5cqw #4a321c40}
+.brand{position:absolute;left:7.3%;top:calc(1.35 * var(--portal-unit));display:flex;align-items:center;gap:calc(.9 * var(--portal-unit))}
+.marks{display:flex;gap:calc(.45 * var(--portal-unit))}
+.marks i{display:grid;place-items:center;width:calc(3.5 * var(--portal-unit));height:calc(3.5 * var(--portal-unit));border-radius:50%;background:#fff8ec;box-shadow:0 calc(.15 * var(--portal-unit)) calc(.5 * var(--portal-unit)) #4a321c40}
 .marks img{width:84%;height:84%;object-fit:contain}
 .marks i:first-child img{width:100%;height:100%}
-.brand span{font-size:2.45cqw;font-weight:400;letter-spacing:.01em;text-shadow:0 0 1.2cqw #5a3d2066}
-.menu{position:absolute;right:8.4%;top:2.35cqw;display:flex;gap:2.45cqw;font-family:var(--sans);font-size:1.02cqw;font-weight:500;text-shadow:0 1px 6px #4a321c66}
+.brand span{font-size:calc(2.45 * var(--portal-unit));font-weight:400;letter-spacing:.01em;text-shadow:0 0 calc(1.2 * var(--portal-unit)) #5a3d2066}
+.menu{position:absolute;right:8.4%;top:calc(2.35 * var(--portal-unit));display:flex;gap:calc(2.45 * var(--portal-unit));font-family:var(--sans);font-size:calc(1.02 * var(--portal-unit));font-weight:500;text-shadow:0 1px 6px #4a321c66}
 .menu a:hover{color:#fff}
-.intro{left:0;right:0;top:11.4%;text-align:center;text-shadow:0 0 2cqw #4a321c55}
-.intro h1{margin:0;font-size:3.05cqw;font-weight:400;line-height:1.45;letter-spacing:.01em}
-.intro p{margin:1.6cqw 0 0;font-size:1.34cqw;font-weight:400;letter-spacing:-.012em}
+.intro{left:0;right:0;top:11.4%;text-align:center;text-shadow:0 0 calc(2 * var(--portal-unit)) #4a321c55}
+.intro h1{margin:0;font-size:calc(3.05 * var(--portal-unit));font-weight:400;line-height:1.45;letter-spacing:.01em}
+.intro p{margin:calc(1.6 * var(--portal-unit)) 0 0;font-size:calc(1.34 * var(--portal-unit));font-weight:400;letter-spacing:-.012em}
 br.m{display:none}
 .menu-toggle,.m-consult,.m-tel{display:none}
-.privacy{position:absolute;right:8.4%;bottom:1.2cqw;font-family:var(--sans);font-size:.85cqw;color:#5a4330;opacity:.85}
+.privacy{position:absolute;right:8.4%;bottom:calc(1.2 * var(--portal-unit));font-family:var(--sans);font-size:calc(.85 * var(--portal-unit));color:#5a4330;opacity:.85}
 .privacy:hover{text-decoration:underline}
-.portal-facts{position:absolute;left:8%;right:8%;bottom:5.5cqw;margin:0;text-align:center;font:1.1cqw/1.65 var(--sans);color:#493729;text-shadow:0 1px 3px #fff8e6cc}
+.portal-facts{position:absolute;left:8%;right:8%;bottom:calc(5.5 * var(--portal-unit));margin:0;text-align:center;font:calc(1.1 * var(--portal-unit))/1.65 var(--sans);color:#493729;text-shadow:0 1px 3px #fff8e6cc}
 /* 아치 안쪽(사진이 보이는 부분)을 원본 1536×1024에서 픽셀로 잰 값: 위 323, 아래 826, 폭은 아치마다 다름 */
 .arch{top:31.54%;height:49.12%;transition:box-shadow .25s,background .25s}
 .hospital{left:17.45%;width:16.93%;border-radius:50% 50% 0 0/25.8% 25.8% 0 0}
@@ -34,24 +35,49 @@ br.m{display:none}
 .home{left:65.49%;width:16.99%;border-radius:50% 50% 0 0/25.9% 25.9% 0 0}
 .arch:hover,.arch:focus-visible{outline:2px solid #fff0ceaa;outline-offset:2px;box-shadow:0 0 28px #ffe6a966;background:#fff4cf0c}
 .label{position:absolute;left:0;right:0;top:64.4%;display:flex;flex-direction:column;align-items:center;text-shadow:0 1px 10px #2a1a0c99}
-.label b{font-size:2.05cqw;font-weight:500;line-height:1.2}
-.label small{margin-top:.75cqw;font-size:1.1cqw;font-weight:400}
-.label i{display:grid;place-items:center;width:2.8cqw;height:2.8cqw;margin-top:1.45cqw;border:1.5px solid #fff3dccc;border-radius:50%;
-  font-family:var(--sans);font-style:normal;font-size:1.3cqw;transition:background .25s}
+.label b{font-size:calc(2.05 * var(--portal-unit));font-weight:500;line-height:1.2}
+.label small{margin-top:calc(.75 * var(--portal-unit));font-size:calc(1.1 * var(--portal-unit));font-weight:400}
+.label i{display:grid;place-items:center;width:calc(2.8 * var(--portal-unit));height:calc(2.8 * var(--portal-unit));margin-top:calc(1.45 * var(--portal-unit));border:1.5px solid #fff3dccc;border-radius:50%;
+  font-family:var(--sans);font-style:normal;font-size:calc(1.3 * var(--portal-unit));transition:background .25s}
 .arch:hover i{background:#fff4d833}
-.label em{margin-top:.45cqw;font-family:var(--sans);font-style:normal;font-size:.94cqw;font-weight:500}
+.label em{margin-top:calc(.45 * var(--portal-unit));font-family:var(--sans);font-style:normal;font-size:calc(.94 * var(--portal-unit));font-weight:500}
 
 
 @media (prefers-reduced-motion:reduce){.arch,.label i{transition:none}}
-.menu .menu-consult{padding:.3cqw .9cqw;margin-top:-.3cqw;border:1px solid #fff3dccc;border-radius:999px;background:#fff4d81f}
+.menu .menu-consult{padding:calc(.3 * var(--portal-unit)) calc(.9 * var(--portal-unit));margin-top:calc(-.3 * var(--portal-unit));border:1px solid #fff3dccc;border-radius:999px;background:#fff4d81f}
 
 
 
 
 /* 병원 아치 안 인증 표시 */
-.seal{position:absolute;bottom:calc(100% + .9cqw);left:50%;transform:translateX(-50%);white-space:nowrap;display:inline-flex;align-items:center;gap:.35cqw;padding:.28cqw .8cqw .28cqw .45cqw;border-radius:999px;background:#2a1a0c55;border:1px solid #fff3dc66;font-family:var(--sans);font-size:.82cqw;font-weight:500;letter-spacing:.01em;backdrop-filter:blur(3px)}
-.seal svg{width:1.2cqw;height:1.2cqw;fill:#f3d9a4}
+.seal{position:absolute;bottom:calc(100% + calc(.9 * var(--portal-unit)));left:50%;transform:translateX(-50%);white-space:nowrap;display:inline-flex;align-items:center;gap:calc(.35 * var(--portal-unit));padding:calc(.28 * var(--portal-unit)) calc(.8 * var(--portal-unit)) calc(.28 * var(--portal-unit)) calc(.45 * var(--portal-unit));border-radius:999px;background:#2a1a0c55;border:1px solid #fff3dc66;font-family:var(--sans);font-size:calc(.82 * var(--portal-unit));font-weight:500;letter-spacing:.01em;backdrop-filter:blur(3px)}
+.seal svg{width:calc(1.2 * var(--portal-unit));height:calc(1.2 * var(--portal-unit));fill:#f3d9a4}
 .seal svg path+path{stroke:#4a321c}
+
+/* PC는 한 화면 안에 모든 링크·고지를 배치한다. 넓은 창에서는 배경을 비율대로 확대하고
+   아치의 클릭 영역도 배경의 세로 자르기 위치에 맞춘다. 글자는 화면 높이만큼만 커진다. */
+@media (min-width:900px){
+  html{overscroll-behavior:none}
+  .intro{text-shadow:0 2px 12px #3a281499,0 1px 3px #3a281466}
+  .arch{top:calc(50% - .1846 * var(--portal-art-height));height:calc(.4912 * var(--portal-art-height))}
+  .label{top:auto;bottom:max(0px,calc(.3066 * var(--portal-art-height) - var(--svh,1svh)*50 + max(112px,14 * var(--portal-unit))))}
+  .menu{font-size:max(12px,calc(1.02 * var(--portal-unit)))}
+  .intro h1{font-size:max(24px,calc(3.05 * var(--portal-unit)))}
+  .label b{font-size:max(20px,calc(2.05 * var(--portal-unit)))}
+  .label small{font-size:max(12px,calc(1.1 * var(--portal-unit)))}
+  .label em{font-size:max(11px,calc(.94 * var(--portal-unit)))}
+  .seal{font-size:max(10px,calc(.82 * var(--portal-unit)))}
+  .portal-facts{bottom:max(56px,calc(5.5 * var(--portal-unit)));font-size:max(12px,calc(1.1 * var(--portal-unit)))}
+  .privacy{bottom:max(10px,calc(1.2 * var(--portal-unit)));font-size:max(11px,calc(.85 * var(--portal-unit)))}
+}
+@media (min-width:900px) and (min-aspect-ratio:3/2){
+  .portal{--portal-art-height:66.6666667vw;background-size:100% 100%,cover}
+}
+@media (min-width:900px) and (min-aspect-ratio:2/1){
+  .intro{top:8%}
+  .intro h1 br{display:none}
+  .intro .lead::after{content:" "}
+}
 
 /* ---------- 모바일(900px 미만): 승인 시안 design/portal-mobile-v2/01-cathedral-light ----------
    배경은 시안에서 글자·버튼과 아치 안 빛줄기를 지운 그림(portal-mobile-bg-v3.jpg). 글자는 PC 대문과 같다. */
@@ -59,7 +85,7 @@ br.m{display:none}
   html{background:#7b6b58}
   body{background:#7b6b58 url(portal-mobile-bg-v3.jpg) center top/cover no-repeat;min-height:calc(var(--svh,1svh)*100)}
   .stage{display:block;min-height:calc(var(--svh,1svh)*100)}
-  .portal{width:100%;min-height:calc(var(--svh,1svh)*100);aspect-ratio:auto;background:none;container-type:normal;
+  .portal{width:100%;height:auto;min-height:calc(var(--svh,1svh)*100);aspect-ratio:auto;background:none;container-type:normal;
     display:flex;flex-direction:column;padding:0 16px max(22px,env(safe-area-inset-bottom))}
   .top,.intro,.arch,.brand,.label,.seal{position:static}
   .top{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;z-index:5}
@@ -154,7 +180,8 @@ br.m{display:none}
 }
 
 /* PC 대문의 실제 건물과 AI 아치 연출을 구분한다. */
-.portal-image-note{position:absolute;left:8%;right:8%;bottom:3.1cqw;margin:0;text-align:center;font:12px/1.6 var(--sans);color:#4e3927}
+.portal-image-note{position:absolute;left:8%;right:8%;bottom:calc(3.1 * var(--portal-unit));margin:0;text-align:center;font:12px/1.6 var(--sans);color:#4e3927}
+@media(min-width:900px){.portal-image-note{bottom:max(30px,calc(3.1 * var(--portal-unit)))}}
 @media(max-width:899px){.portal-image-note{display:none}}
 
 /* 앱 내 브라우저의 글자 자동 확대와 긴 카드 문구로 인한 가로 넘침 방지 */
