@@ -1,5 +1,5 @@
 /* 구미가톨릭 대문 — 승인 시안(portal-three-arches-bright, 1536×1024)을 HTML로 옮긴 것.
-   PC(900px 이상)는 시안 비율의 판 위에 시안 좌표(%)대로 글자를 얹는다. 1cqw = 시안 15.36px. */
+   PC(900px 이상)는 화면 너비를 모두 쓰고 시안 좌표(%)대로 글자를 얹는다. 1cqw = 시안 15.36px. */
 :root{--cream:#fff6e6;--serif:'Noto Serif KR','AppleMyungjo','Batang',serif;
   --sans:'Pretendard Variable',Pretendard,-apple-system,BlinkMacSystemFont,'Apple SD Gothic Neo',sans-serif}
 *{box-sizing:border-box}
@@ -7,7 +7,7 @@ body{margin:0;background:#fbf8f1;color:var(--cream);font-family:var(--serif);-we
 a{color:inherit;text-decoration:none}
 :focus-visible{outline:2px solid #fff0ce;outline-offset:4px}
 .stage{min-height:calc(var(--svh,1svh)*100);display:flex;align-items:center;justify-content:center}
-.portal{position:relative;width:min(100%,calc(var(--svh,1svh)*150));aspect-ratio:1536/1024;flex-shrink:0;container-type:inline-size;
+.portal{position:relative;width:100%;min-height:calc(var(--svh,1svh)*100);aspect-ratio:1536/1024;flex-shrink:0;container-type:inline-size;
   background:url(portal-bg.jpg) center/100% 100% no-repeat}
 .top,.intro,.arch{position:absolute}
 .top{inset:0 0 auto 0}
