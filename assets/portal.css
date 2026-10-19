@@ -58,6 +58,8 @@ br.m{display:none}
    아치의 클릭 영역도 배경의 세로 자르기 위치에 맞춘다. 글자는 화면 높이만큼만 커진다. */
 @media (min-width:900px){
   html{overscroll-behavior:none}
+  .top,.intro{z-index:1}
+  .arches{position:absolute;inset:0;overflow:clip}
   .intro{text-shadow:0 2px 12px #3a281499,0 1px 3px #3a281466}
   .arch{top:calc(50% - .1846 * var(--portal-art-height));height:calc(.4912 * var(--portal-art-height))}
   .label{top:auto;bottom:max(0px,calc(.3066 * var(--portal-art-height) - var(--svh,1svh)*50 + max(112px,14 * var(--portal-unit))))}
